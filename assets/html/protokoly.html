@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Komunikačné protokoly</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+  <link href="../style/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charmonman|PT+Sans+Narrow" rel="stylesheet"> 
+  <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#accordion" ).accordion();
+            } );
+  </script>
+  <script>
+  $(document).ready(function(){
+    $(".ipv4").click(function(){
+      $(".vote").hide();
+      $(".v6").hide();
+      $(".v4").show();
+    });
+    $(".ipv6").click(function(){
+      $(".v4").hide(); 
+      $(".v6").show();
+      $(".vote").hide();
+    });
+    $(".show4").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+    $(".show6").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+  });
+  </script>
+</head>
+<body>
+  <div id="accordion">
+    <h3><b>Open Shortest Path First [OSPF]</b></h3>
+      <article>
+        <div class="vote">
+        <p>Následne si zvoľ verziu IP adries, pre ktorú sa chceš komunikačný protokol naučiť</p>
+        <button class="ipv4">IPv4</button>
+        <button class="ipv6">IPv6</button>
+        </div>
+        <div class="v4">
+          <p>Toto je časť pre IPv4</p>
+            <button class="show4">Zvol si verziu</button>
+        </div>
+
+        <div class="v6">
+          <p>Toto je časť pre IPv6</p>
+          <button class="show6">Zvol si verziu</button>
+        </div>
+      </article>
+    
+    <h3><b>Routing Information Protocol version 2 [RIPv2]</b></h3>
+      <article>
+        <div class="vote">
+        <p>Následne si zvoľ verziu IP adries, pre ktorú sa chceš komunikačný protokol naučiť</p>
+        <button class="ipv4">IPv4</button>
+        <button class="ipv6">IPv6</button>
+        </div>
+        <div class="v4">
+          <p>Toto je časť pre IPv4</p>
+            <button class="show4">Zvol si verziu</button>
+        </div>
+        <div class="v6">
+          <p>Toto je časť pre IPv6</p>
+          <button class="show6">Zvol si verziu</button>
+        </div>
+      </article>
+    
+
+    <h3><b>Enhanced Interior Gateway Routing Protocol [EIGRP]</b></h3>
+      <article>
+        <div class="vote">
+        <p>Následne si zvoľ verziu IP adries, pre ktorú sa chceš komunikačný protokol naučiť</p>
+        <button class="ipv4">IPv4</button>
+        <button class="ipv6">IPv6</button>
+        </div>
+        <div class="v4">
+          <p>Toto je časť pre IPv4</p>
+            <button class="show4">Zvol si verziu</button>
+        </div>
+        <div class="v6">
+          <p>Toto je časť pre IPv6</p>
+          <button class="show6">Zvol si verziu</button>
+        </div>
+      </article>
+  </div> 
+  <a href="index1.html"><button class="home">MENU</button></a>
+</body>
+</html>

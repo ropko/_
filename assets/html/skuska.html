@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="https://fonts.googleapis.com/css?family=Muli|Ubuntu" rel="stylesheet">
+	<link href="../style/style.css" rel="stylesheet" >
+</head>
+	
+<body>
+	<h2 id="test_status"></h2>
+	<div id="test"></div>
+	<a href="index1.html"><button class="button1 button2">MENU</button></a>
+<script>
+	var pos = 0, test, test_status, question, choices, chA, chB, chC, correct = 0;
+	var questions = [
+	[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "A" ],
+	[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "B" ],
+	[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "A" ],
+	[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "B" ]
+	];
+function _(x) {
+		return document.getElementById(x);
+		
+	}
+function renderQuestion() {
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>Máš "+correct+" zo "+questions.length+" otázok správne</h2>";
+		_("test_status").innerHTML = "Test je dokončený";
+		pos = 0;
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Otázka "+(pos+1)+" z "+questions.length;
+	var question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>Ďalej</button>";
+}
+function checkAnswer() {
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++) {
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	console.log("Choice: "+choice);
+	console.log("Answer: "+questions[pos][4]);
+	if(choice == questions[pos][4]){
+		correct++;
+
+	} 
+
+	pos++;
+	console.log("Position: "+pos);
+	console.log("Correct: "+correct);
+	renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+</body>
+</html>

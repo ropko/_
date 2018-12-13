@@ -1,14 +1,18 @@
+
 body{
- background-color:  #0057e7;   
- font-family: 'PT Sans Narrow', sans-serif;
+  background-color:#150040;   
+  font-family: 'Hind Madurai', sans-serif;
+  color:#99ccff;
   }
 h1 {
   font-size: 40px;
-  padding:10% 0% 2%;
+  padding:5% 0% 2%;
 }
 h3{
-  font-family: 'Charmonman', cursive;
-
+  font-size: 1.7em;
+  font-family: 'Rokkitt', serif;}
+h2 {
+  color: white;
 }
 p{
   font-size: 15px;
@@ -21,7 +25,7 @@ table{
 }
 th, td {
     padding: 10px;
-    color:red;
+    color:#150040;
     position: relative;
     border: 1px solid black;
     text-align: center;
@@ -30,6 +34,7 @@ td{
   padding: 10px;
 }
 button{
+  cursor: pointer;
   margin: auto;  
   background-color: white;
   color: black;
@@ -43,6 +48,29 @@ button:hover{
   color: white;
   background-color: #000c63;
 }
+button:active {
+  background-color: #01aaaa;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+li {
+  width: 500px;
+}
+a{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+.body {
+  background-image: url('../img/obr2.jpg');
+}
+.bod2 {
+  background-image: url('../img/obr5.jpg');
+}
 #accordion{
   padding: 5% 10% 0%;
   max-width: 75%;
@@ -50,24 +78,18 @@ button:hover{
 }
 .mid{
   text-align: center;
+  margin: 0;
+  color: white;
 }
 .button {
-  position: relative;
-  top: 100px;
-  margin: 15px;
-  margin-left: 45%;
-  display: inline-block;
-  padding: 15px 25px;
+  width: 350px;
+  max-width: 100%;
   font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
   outline: none;
   color: #fff;
   background-color: #00c2c2;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
 }
 .button:hover {background-color: #01aaaa}
 
@@ -76,50 +98,41 @@ button:hover{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.button1{
-  margin: 15px;
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #00c2c2;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-.button1:hover {background-color: #01aaaa}
-
-.button1:active {
-  background-color: #01aaaa;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-.button2 {background-color: #05059d;} 
-.button3 {background-color: #05053f;}  
-.button4 {background-color: #0fe9f4; color: black;} 
-.button5 {background-color: #555555;} 
 #accordion h3{
-  background-color: yellow;
+  background-color: #43bcc6;
+  color:black;
   max-width: 100%;
   border: solid 1px;
-  text-align: center;
+  border-radius: 15px 50px;
+  text-align:center;
 }
 #menu{
+  margin-top: 10%;
   display: flex;
   justify-content:space-around;
-  flex-wrap: wrap;
+}
+#menu button{
+  font-family: 'Rokkitt', serif;  font-size: 1.7em;
+  cursor: pointer;
+  padding: 15px 25px;
+  width: 300px;
+  max-width: 100%;
+  text-align: center;
+  max-height: 100%;
+  height: 100%;
 }
 .v4, .v6{
   display:none;
 }
 #test {
   border: #000 1px solid black;
+  color: white;
 
 }
 .home{
   text-align: left;
+}
+.txt {
+  text-align: center;
+  font-size: 40px 
 }

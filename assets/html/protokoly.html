@@ -6,40 +6,18 @@
   <title>Komunikačné protokoly</title>
   <link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
   <link href="../style/style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Charmonman|PT+Sans+Narrow" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $( function() {
+      $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
       $( "#accordion" ).accordion();
             } );
   </script>
-  <script>
-  $(document).ready(function(){
-    $(".ipv4").click(function(){
-      $(".vote").hide();
-      $(".v6").hide();
-      $(".v4").show();
-    });
-    $(".ipv6").click(function(){
-      $(".v4").hide(); 
-      $(".v6").show();
-      $(".vote").hide();
-    });
-    $(".show4").click(function(){
-      $(".vote").show();
-      $(".v6").hide();
-      $(".v4").hide();
-    });
-    $(".show6").click(function(){
-      $(".vote").show();
-      $(".v6").hide();
-      $(".v4").hide();
-    });
-  });
-  </script>
 </head>
 <body>
+  <a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
   <div id="accordion">
     <h3><b>Open Shortest Path First [OSPF]</b></h3>
       <article>
@@ -94,6 +72,29 @@
         </div>
       </article>
   </div> 
-  <a href="index1.html"><button class="home">MENU</button></a>
+  <script>
+  $(document).ready(function(){
+    $(".ipv4").click(function(){
+      $(".vote").hide();
+      $(".v6").hide();
+      $(".v4").show();
+    });
+    $(".ipv6").click(function(){
+      $(".v4").hide(); 
+      $(".v6").show();
+      $(".vote").hide();
+    });
+    $(".show4").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+    $(".show6").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+  });
+  </script>
 </body>
 </html>

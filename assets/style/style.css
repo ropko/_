@@ -1,4 +1,3 @@
-
 body{
   background-color:#150040;   
   font-family: 'Hind Madurai', sans-serif;
@@ -6,7 +5,7 @@ body{
   }
 h1 {
   font-size: 40px;
-  padding:5% 0% 2%;
+  text-align: center;
 }
 h3{
   font-size: 1.7em;
@@ -97,6 +96,9 @@ a{
   background-color: #01aaaa;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+#osi {
+  text-align: center;
 }
 #accordion h3{
   background-color: #43bcc6;

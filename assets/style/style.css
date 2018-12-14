@@ -65,6 +65,14 @@ a{
   vertical-align: baseline;
   text-decoration: none;
 }
+#skuska h2{
+  background-color: red;
+  color:black;
+  max-width: 100%;
+  border: solid 1px;
+  border-radius: 15px 50px;
+  text-align:center;
+}
 .body {
   background-image: url('../img/obr2.jpg');
 }
@@ -72,7 +80,7 @@ a{
   background-image: url('../img/obr5.jpg');
 }
 #accordion{
-  padding: 5% 10% 0%;
+  padding: 0% 10% 0%;
   max-width: 75%;
   text-align: center;
 }

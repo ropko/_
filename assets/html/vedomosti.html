@@ -21,6 +21,7 @@
 	<div id="accordion">
 		<h3>Základné nastavenie routra</h3>
 		<article>
+			<p>Zoraď do správneho poradia úvodnú konfiguráciu routra</p>
 			<ul id="sortable"></ul>
 			<button id="vyhodnotit">Vyhodnotit</button>
 		</article>
@@ -65,7 +66,7 @@
 	    for(var i=1;i<= 4;i++)
 	      vystup+=$("li:nth-of-type("+i+")").data("poradie");
 	    if(vystup==dobre){
-  			alert("Odpovedal si správne");
+  			alert("Tvoja odpoveď je správna");
 		}else{
   			alert("Tvoja odpoveď je nesprávna");
 			}

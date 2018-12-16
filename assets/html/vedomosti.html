@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Overenie vedomostí</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
 	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
@@ -21,7 +22,7 @@
 		<h3>Základné nastavenie routra</h3>
 		<article>
 			<ul id="sortable"></ul>
-			<button id="vyhodnotit" onclick="slucka()">Vyhodnotit</button>
+			<button id="vyhodnotit">Vyhodnotit</button>
 		</article>
 		<h3>Vedomosti o základných súčastiach siete</h3>
 		<article>
@@ -63,7 +64,11 @@
 	   
 	    for(var i=1;i<= 4;i++)
 	      vystup+=$("li:nth-of-type("+i+")").data("poradie");
-	      console.log(vystup);
+	    if(vystup==dobre){
+  			alert("Odpovedal si správne");
+		}else{
+  			alert("Tvoja odpoveď je nesprávna");
+			}
 	  });
 	  function getRndInteger(min, max) {
 	    return Math.floor(Math.random() * (max - min) ) + min;
@@ -78,12 +83,11 @@
 		var questions = [
 		[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "A" ],
 		[   "Ktoré zariadenie prepína na základe IP Adries?", "Switch", "Hub", "Router", "C" ],
-		[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "A" ],
-		[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "B" ]
+		[   "Ktoré zariadenie skopíruje prijaté dáta na všetky ostatné porty?", "Switch", "Hub", "Router", "B" ],
+		[   "Ktorá sieť je využívaná lokálne?", "LAN", "MAN", "WAN", "A" ]
 		];
 	function _(x) {
 			return document.getElementById(x);
-			
 		}
 	function renderQuestion() {
 		test = _("test");

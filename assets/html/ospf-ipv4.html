@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="../style/style.css" rel="stylesheet" >
+	<meta charset="utf-8">
+	<title>OSPF pre IPv4</title>
+</head>
+<body id="osi">
+  <a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	<h1>OSPF</h1>
+	<div id="size">
+		<p>Open Shortest Path First je najpoužívanejší komunikačný protokol typu link-state, to znamená že smerovač pozná štruktúru celej siete.V súčasnosti sa používa verzia OSPFv2 ktorá je určená pre IPv4 siete. OSPF je tzv. beztriedny smerovací protokol, pracuje v sieťach s rôzne dlhými maskami podsietí (VLSM). Na IPv4 sieťach využíva vlastný transportný protokol č. 89. <br>U smerovačou firmy CISKO je administrativna vzdialenosť protokolu implicitne 110.
+
+			</p>
+		</div>
+	<h1>Pojmy v OSPF</h1>
+		<div id="size" style="text-align: left">
+			<ul>
+				<li class="velk">Link</li><p>Rozhranie smerovača</p>
+				<li class="velk">Link-state</li><p>Vlastnosti rozhrania (IP adresa/maska, cena, s kým nás spája)</p>
+				<li class="velk">Link State ID</li><p>Unikátny identifikátor, pod ktorým je možné v databáze vyhľadať konkrétny link-state záznam<br> Zvyčajne Router ID, DR router IP, NET adresa atď.</p>
+				<li class="velk">Router ID</li><p>4B číslo jednoznačne identifikujúce router v autonómnom systéme<br> Môže, ale nemusí zodpovedať nejakej jeho IP adrese</p>
+			</ul>
+		</div>
+	<h1>OSPF si udržiava tri databázy</h1>	
+		<div id="size" style="text-align: left;">
+			<ul>
+				<li class="velk">Adjacency Database (show ip ospf neighbor)</li><p>Databáza susedov a komunikačných vzťahov medzi nimi</p>
+				<li class="velk">Link-state Database (LSDB) (show ip ospf database)</li><p>Topologická databáza obsahujúca orientovaný graf siete vystavaný pomocou informácií v jednotlivých LSA
+					<br> Ak je router vo viacerých oblastiach, pre každú si vedie samostatnú LSDB<br> Všetky routery v rovnakej oblasti majú identickú LSDB</p>
+				<li class="velk">Forwarding Database (show ip route)</li><p>Obsahuje informácie o každej dosiahnuteľnej sieti a príslušnom next-hop routeri<br>V OSPF teoreticky smerovač pozná úplnú cestu od seba do cieľovej siete, v smerovacej tabuľke sa však zaznamená vždy len prvý nasledujúci smerovač
+</p>	
+			</ul>
+		</div>
+
+
+<script>
+  $(document).ready(function(){
+    $("#link").click(function(){
+      $("#size").hide();
+      $("#link").show();
+      
+    });
+    $(".ipv6").click(function(){
+      $(".v4").hide(); 
+      $(".v6").show();
+      $(".vote").hide();
+    });
+    $(".show4").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+    $(".show6").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+  });
+  </script>
+</body>
+</html>

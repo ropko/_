@@ -16,14 +16,16 @@
 	</script>
 </head>
 <body>
-	<a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
 	<h1 class="txt">Vyber si tému, pri ktorej si chceš overiť svoje vedomosti</h1>
 	<div id="accordion">
 		<h3>Základné nastavenie routra</h3>
 		<article>
 			<p>Zoraď do správneho poradia úvodnú konfiguráciu routra</p>
-			<ul id="sortable"></ul>
-			<button id="vyhodnotit">Vyhodnotit</button>
+			<div id="vyhodnotit">
+				<ul id="sortable"></ul>
+				<button >Vyhodnotit</button>
+			</div>
 		</article>
 		<h3>Vedomosti o základných súčastiach siete</h3>
 		<article>
@@ -66,9 +68,9 @@
 	    for(var i=1;i<= 4;i++)
 	      vystup+=$("li:nth-of-type("+i+")").data("poradie");
 	    if(vystup==dobre){
-  			alert("Tvoja odpoveď je správna");
+	    	vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
 		}else{
-  			alert("Tvoja odpoveď je nesprávna");
+			vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je nesprávna</h2>";
 			}
 	  });
 	  function getRndInteger(min, max) {
@@ -121,9 +123,7 @@
 		console.log("Answer: "+questions[pos][4]);
 		if(choice == questions[pos][4]){
 			correct++;
-
 		} 
-
 		pos++;
 		console.log("Position: "+pos);
 		console.log("Correct: "+correct);

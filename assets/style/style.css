@@ -2,7 +2,7 @@
   background-image: url('../img/obr2.jpg');
 }
 .body2 {
-  background-image: url('../img/obr5.jpg');
+  background-image : url('../img/obr5.jpg');
 }
 body{
   font-family: 'Hind Madurai', sans-serif;
@@ -133,6 +133,14 @@ th,td {
 #right{
   text-align: right;
 }
+#center {
+  text-align: center;
+}
+#size {
+  width: 900px;
+  margin-left: 20%;
+  padding-top: 20px;
+}
 #jstf{
   text-align: justify;
 }
@@ -151,3 +159,6 @@ th,td {
 .v4, .v6{
   display:none;
 }
+.velk{
+  font-size: 18px;
+} 

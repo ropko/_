@@ -85,7 +85,7 @@ th,td {
   background-color: #43bcc6;
   color:black;
   max-width: 100%;
- 
+  border: solid 1px;
   border-radius: 15px 50px;
   text-align:center;
 }

@@ -5,10 +5,59 @@
 	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
 	<link href="../style/style.css" rel="stylesheet" >
 	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	<script>
+    $( function() {
+      $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
+      $( "#accordion" ).accordion();
+            } );
+  </script>
 </head>
 <body>
 	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
-	<article>
+	<article id='mid'>
+		<h1>Bezpečnosť počítačových sietí</h1>
+		<p>Sieť musíme chrániť pred prístupom neautorizovaných užívateľov a rôznymi útokmi ako napríklad DDOS.</p>
+		<p>Tomuto vieme zabrániť viacerími spôsobmi:</p>
+		<ol>
+			<li>firewallom</li>
+			<li>proxy-serverom</li>
+			<li>filtrovaním prevádzky pomocou access listov.</li>
+		</ol>
+		<h2>Filtrovanie prevádzky</h2>
+		<ul id="left">
+			<li>riadime a filtrujeme prenosy,ktoré vstupujú alebo vystupujú zo siete.</li>
+			<li>filtrovaním zlepšujeme výkon prevádzky</li>
+			<li>smerovačmi filtrujeme prevádzku pomocou prístupových záznamov <b>Access-listov(ACL)</b></li>
+		</ul>
+		<article id="left">
+		<h3>Princíp fungovania Access-listov</h3>
+		<p>Access listy pozostávajú z pravidiel:</p>
+		<ul>
+			<li id="green">PERMIT-povolený</li>
+			<LI id="red">DENY-zakázaný</LI>
+		</ul>
+		<p>Každý paket sa testuje podľa pravidiel od prvého pričom, ak sa nejaké pravidlo vykoná, ostané sa preskočia.</p>
+		</article>
+		<h3>Delenie access-listov</h3>
+	    <div id="accordion">
+	    	<h3>Štandardné ACL</h3>
+		    	<article>
+		   			<ul id="left"> 
+	    				<li>založené len na zdrojovej IP adrese</li>
+	    				<li>povoľujú alebo zakazujú prístup počítača do siete</li>
+	    				<li>používajú sa aby povolili/blokovali všetky služby používateľovi alebo zariadeniam v sieti</li>
+	    				<li>sú identifikované číslom 1-99</li>
+	    				<li id="red">Zadávajú sa čo najbližšie ku cieľu!</li>
+	    			</ul>
+		    	</article>
+		   	<h3>Rozšírené ACL</h3>
+	    		<article>
+	    			
+	    		</article>
+	    </div>
+
 	</article>
 </body>
 </html>

@@ -36,22 +36,42 @@
 		<h3>Princíp fungovania Access-listov</h3>
 		<p>Access listy pozostávajú z pravidiel:</p>
 		<ul>
-			<li id="green">PERMIT-povolený</li>
-			<LI id="red">DENY-zakázaný</LI>
+			<li><mark class="green">PERMIT</mark>-povolený</li>
+			<li><mark class="red">DENY</mark>-zakázaný</li>
 		</ul>
 		<p>Každý paket sa testuje podľa pravidiel od prvého pričom, ak sa nejaké pravidlo vykoná, ostané sa preskočia.</p>
 		</article>
 		<h3>Delenie access-listov</h3>
 	    <div id="accordion">
 	    	<h3>Štandardné ACL</h3>
-		    	<article>
+		    	<article id="left">
 		   			<ul id="left"> 
 	    				<li>založené len na zdrojovej IP adrese</li>
 	    				<li>povoľujú alebo zakazujú prístup počítača do siete</li>
 	    				<li>používajú sa aby povolili/blokovali všetky služby používateľovi alebo zariadeniam v sieti</li>
 	    				<li>sú identifikované číslom 1-99</li>
-	    				<li id="red">Zadávajú sa čo najbližšie ku cieľu!</li>
+	    				<li><mark class="red">Zadávajú sa čo najbližšie ku cieľu!</mark></li>
 	    			</ul>
+	    			<h4>Konfigurácia štandardných ACL</h4>
+	    			<ol>
+	    				<li>access-list <mark class="pink">číslo </mark><mark class="red">permit|deny </mark><mark class="green">adresa siete|host|any</mark>
+	    				</li>
+	    				<li>
+	    					<p>ip access-list <mark class="white">standard|extended</mark> <mark class="pink">číslo|meno</mark></p>
+	    					<p><mark class="red">permit | deny </mark><mark class="green">adresa siete|host|any</mark></p>
+	    					<p>exit</p>
+	    				</li>
+					</ol>	
+							<p><mark class="pink">meno</mark>-meno ACL</p>
+	    					<p><mark class="pink">číslo</mark>-označenie štandardného ACL <1-99></p>
+	    					<p><mark class="red">permit|deny</mark>-povoľ/zakáž prevádzku</p>
+	    					<p><mark class="green">adresa siete</mark>:</p>
+	    						<ul>
+	    							<li>adresa siete, ktorú chcem povoliť alebo zakázať.</li>
+	    							<li>masku siete zadávame v tvare<a href="zaklady.html#wildcard"> Wildcard</a></li>
+	    						</ul>
+	    					<p><mark class="green">host</mark>-označenie konktrétneho hosta v  sieti</p>
+	    					<p><mark class="green">any</mark>-označenie pre všetky zdrojové adresy</p>
 		    	</article>
 		   	<h3>Rozšírené ACL</h3>
 	    		<article>

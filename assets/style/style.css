@@ -29,6 +29,7 @@ p{
   font-size: 15px;
   }
 a{
+  color: red;
   margin: 0;
   padding: 0;
   border: 0;
@@ -133,10 +134,19 @@ th,td {
 #right{
   text-align: right;
 }
-#red{
+mark{
+ background:none;
+}
+mark.white{
+  color: white;
+}
+mark.pink{
+  color: pink;
+}
+mark.red{
   color: red;
 }
-#green{
+mark.green{
   color: green;
 }
 #center {

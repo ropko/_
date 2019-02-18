@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smerovacie protokoly</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+  <link href="../style/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
+      $( "#accordion" ).accordion();
+            } );
+  </script>
+  <script>
+    $( function() {
+      $("#skuska").accordion({ header: "h3", collapsible: true, active: false });
+      $( "#skuska" ).accordion();
+            } );
+  </script>
+</head>
+<body>
+  <a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+  <p id="mid">Smerovacie protokoly delíme na:</p>
+  <article id="mid">
+    <div id="skuska">
+      <h2>Distance Vector</h2>
+      <div id="accordion">
+        
+        
+        <h3><b>Routing Information Protocol</b></h3>
+          <article>
+            <div class="vote">
+            <p>V tejto časti sa naučíš teóriu ale aj konfiguráciu. Vyber si kde chceš začať</p>
+            <button class="ipv4">Teória</button>
+            <button class="ipv6">Konfigurácia</button>
+            </div>
+            <div class="v4">
+              <p>Toto je časť pre Teóriu</p>
+                <button class="show4">Naspäť</button>
+                <a href="../html/rip.html"><button >Pokračuj</button></a>
+            </div>
+            <div class="v6">
+              <p>Toto je časť pre konfiguráciu</p>
+              <button class="show6">Zvol si verziu</button>
+              <a href="../html/rip-konf.html"><button >Pokračuj</button></a>
+            </div>
+          </article>
+        
+        <h3><b>Enhanced Interior Gateway Routing Protocol [EIGRP]</b></h3>
+          <article>
+            <div class="vote">
+            <p>Vyber si kde chceš začať pri oboznamovaní sa s EIGRP</p>
+            <button class="ipv4">Teória</button>
+            <button class="ipv6">Konfigurácia</button>
+            </div>
+            <div class="v4">
+              <p>Toto je časť pre Teóriu</p>
+                <button class="show4">Naspäť</button>
+                <a href="../html/"><button >Pokračuj</button></a>
+            </div>
+            <div class="v6">
+              <p>Toto je časť pre Konfiguráciu</p>
+              <button class="show6">Naspäť</button>
+              <a href="../html/"><button >Pokračuj</button></a>
+            </div>
+          </article>
+      </div> 
+      <h2>Link-state protkoly</h2>
+      <div id="accordion">
+        <h3><b>Open Shortest Path First [OSPF]</b></h3>
+          <article>
+            <p>Bol vytvorený organizáciou IETF v rokoch  1988 až 1991. Tento protokol patrí do skupiny smerovacích protokolov IGP(Interior Gateway Routing Protocol) a tak je určený vo vnútri jedného autonómneho systému.</p>
+            <div class="vote">
+            <p>Následne si zvoľ kde chceš začať</p>
+            <button class="ipv4">Teória</button>
+            <button class="ipv6">Konfigurácia</button>
+            </div>
+            <div class="v4">
+              <p>Toto je časť pre Teóriu</p>
+                <button class="show4">Naspäť</button>
+                <a href="../html/ospf-ipv4.html"><button >Pokračuj</button></a>
+            </div>
+
+            <div class="v6">
+              <p>Toto je časť pre Konfiguráciu</p>
+              <button class="show6">Naspäť</button>
+              <a href="../html/konf.html"><button >Pokračuj</button></a>
+            </div>
+          </article>
+      </div>
+    </div>
+  </article>
+  <script>
+  $(document).ready(function(){
+    $(".ipv4").click(function(){
+      $(".vote").hide();
+      $(".v6").hide();
+      $(".v4").show();
+    });
+    $(".ipv6").click(function(){
+      $(".v4").hide(); 
+      $(".v6").show();
+      $(".vote").hide();
+    });
+    $(".show4").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+    $(".show6").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+  });
+  </script>
+</body>
+</html>

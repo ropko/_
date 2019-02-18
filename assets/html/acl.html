@@ -41,24 +41,95 @@
 		</ul>
 		<p>Každý paket sa testuje podľa pravidiel od prvého pričom, ak sa nejaké pravidlo vykoná, ostané sa preskočia.</p>
 		</article>
-		<h3>Delenie access-listov</h3>
-	    <div id="accordion">
-	    	<h3>Štandardné ACL</h3>
+		<h1>Delenie	 Access Control Listov</h1>
+		<div class="tab">
+		  <button class="tablinks" onclick="openCity(event, 'Standard')" id="defaultOpen">Štandardné ACL</button>
+		  <button class="tablinks" onclick="openCity(event, 'Extend')">Rozšírené ACL</button>
+		</div>
+		<div id="Standard" class="tabcontent">
+		  <h3>Štandardné ACL</h3>
 		    	<article>
 		   			<ul id="left"> 
 	    				<li>založené len na zdrojovej IP adrese</li>
 	    				<li>povoľujú alebo zakazujú prístup počítača do siete</li>
 	    				<li>používajú sa aby povolili/blokovali všetky služby používateľovi alebo zariadeniam v sieti</li>
 	    				<li>sú identifikované číslom 1-99</li>
-	    				<li id="red">Zadávajú sa čo najbližšie ku cieľu!</li>
+	    				<li id="red">Zadávajú sa čo najbližšie ku <b>cieľu</b>!</li>
 	    			</ul>
 		    	</article>
-		   	<h3>Rozšírené ACL</h3>
-	    		<article>
-	    			
-	    		</article>
-	    </div>
+		</div>
+		<div id="Extend" class="tabcontent">
+		  <h3>Rozšírené	 ACL</h3>
+		    	<article>
+		   			<ul id="left"> 
+	    				<li>poskytujú väčšiu možnosť riadenia</li>
+	    				<li>povoľujú alebo zakazujú:
+	    					<ol>
+	    						<li>zdrojovú/cieľovú IP adresu</li>
+	    						<li>protokol</li>
+	    						<li>číslo portu</li>
+	    					</ol>
+	    				</li>
+	    				<li>sú identifikované číslom 100-199 a 2000-2699</li>
+	    				<li id="green">Zadávajú sa čo najbližšie ku <b>zdroju</b>!</li>
+	    			</ul>
+		    	</article>
+		</div>
+		<h1>Konfigurácia ACL</h1>
+		<h2 id="left">Štandardné ACL</h2>
+		<article class="acl"> 
+			<p>ip access-list <mark id="white">standard</mark> "<mark id="green">meno</mark>" | "<mark id="green">číslo</mark>"</p>
+			<p> <mark id="red">permit</mark> | <mark id="red">deny</mark> </p>
+		</article>
+		<h2 id="left">Rozšírené ACL</h2>
+		<article class="acl">
+			<p>ip access-list <mark id="white">extended</mark> "<mark id="green">meno</mark>" | "<mark id="green">číslo</mark>"</p>
+		</article>
+
+	    	
 
 	</article>
+<script>
+  $(document).ready(function(){
+    $("#link").click(function(){
+      $("#size").hide();
+      $("#link").show();
+      
+    });
+    $(".ipv6").click(function(){
+      $(".v4").hide(); 
+      $(".v6").show();
+      $(".vote").hide();
+    });
+    $(".show4").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+    $(".show6").click(function(){
+      $(".vote").show();
+      $(".v6").hide();
+      $(".v4").hide();
+    });
+  });
+  </script>
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 </body>
 </html>

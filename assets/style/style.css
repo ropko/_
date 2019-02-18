@@ -44,6 +44,9 @@ li {
 ol{
   text-align: left;
 } 
+mark{
+  background-color: inherit;
+}
 button{
   font-family: 'Rokkitt', serif;
   font-size: 1.7em;
@@ -164,21 +167,29 @@ th,td {
   margin: 0% 12%;
   text-align: center
 }
+#center {
+  text-align: center;
+}
 #left{
   text-align: left;
 }
 #right{
   text-align: right;
 }
+/*Farby*/
 #red{
   color: red;
 }
 #green{
   color: green;
 }
-#center {
-  text-align: center;
+#white{
+  color: white;
 }
+#black{
+  color: black;
+}
+
 #size {
   width: 900px;
   margin-left: 20%;
@@ -239,6 +250,15 @@ th,td {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
-  border-top: none;
-  
+  border-top: none; 
+}
+.acl{
+    text-align: left;
+    overflow: scroll;
+    overflow-x:hidden;
+    width: 80%;
+    height: 30%;
+}
+.acl p{
+  font-size: 1.8em;
 }

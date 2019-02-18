@@ -44,6 +44,9 @@ li {
 ol{
   text-align: left;
 } 
+ul {
+  text-align: left;
+}
 mark{
   background-color: inherit;
 }

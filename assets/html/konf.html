@@ -20,7 +20,7 @@
 	<p>príkaz <b>router ospf</b> "povie" routru o aký komunikačný protokol sa jedná a pre úspešné spustenie je nutné napiísať aj číslo procesu. Toto číslo identifikuje konfiguráciu a je potrebné pre další proces</p>
 	<ul><li>Router(config-router)# network 192.168.1.0 0.0.0.255 area 1</li></ul>
 	<p>Ďalším krokom je informovanie o sieťach v ktoré sú priamo pripojené ku routru, ako príkaz píšeme <b>network</b> a za tým ip adresu siete a jej wild card masku. Pri ospf je podstaté za wild card masku písať aj areu(oblasť) pre ktoré bude dané ospf pracovať. Je podstatné spraviť ospf konfiguráciu na všetých routroch lebo inak prenos packetov nebude možný.</p>
-	<img src="../img/ospf1.png" width="500px" height="auto" style="margin-left: 20%">
+	<img src="../img/ospf1.PNG" width="500px" height="auto" style="margin-left: 20%">
 	<h2>Zopakovanie</h2>
 	<ul><li>Router> enable</li>
 		<li>Router# configurate terminal </li>
@@ -39,7 +39,7 @@
 	<ul><li>Router(config-router)#default-information originate</li></ul>
 	<p>Pri konfigurácií NAT alebo PAT sa nesie do ospf network písať ip adresa, ktorá má slúžiť pre NATko. Ale ak by sme to nijak inak nedefinovali tak by sa nám po konfigurácií nepodarilo pingnúť na router na ktorom je NATko. Preto je nutné to definovať príkazom <b>default-information originate</b></p>
 	<h2>AREA</h2>
-	<img src="../img/ospf2.png" width="600px" height="auto" style="margin-left: 16%">
+	<img src="../img/ospf2.PNG" width="600px" height="auto" style="margin-left: 16%">
 	<p>Ako už bolo spomenuté v ospf poznáme viacero oblastí(area). Pri jednoduchom konfigurovaní používame vždy rovnaké číslo, avšak čo ked máme použiť viacero oblastí. Pri konfigurácií s viacerými oblasťami treba pamätať na to že vždy je nutné mať "main" router, čiže router ktorého interfacy sa budú nachádzať v area 0. Area 0 je totiž základná a vdaka nej vedia zariadenia komunikovať aj medzi viacerými oblasťami, vid na obrázku.</p>
 </div>
 </body>

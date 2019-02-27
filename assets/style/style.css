@@ -166,6 +166,24 @@ th,td {
   background-color:#011d49 ;
 }
 /*ZAROVNANIE*/
+.iso{
+  display: flex;
+  justify-content:space-between;
+}
+.iso table{
+  background-image: none;
+}
+.iso th,tr,td{
+  color: inherit;
+}
+.right{
+  float: right;
+}
+.left{
+  display:flex;
+  justify-content:space-evenly;
+  float: left;
+}
 #mid{
   margin: 0% 12%;
   text-align: center
@@ -227,6 +245,7 @@ th,td {
 .velk{
   font-size: 18px;
 } 
+
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;

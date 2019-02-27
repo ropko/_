@@ -8,10 +8,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
 	<link href="../style/style.css" rel="stylesheet" >
 	<script src="../script/jquery.ui.touch-punch.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>	
+	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	<script>
+  $( function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+        }
+    });
+  } );
+  </script>	
 	<script>
 	    $( function() {
 	    $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
@@ -36,6 +51,57 @@
 		<article>
 			<h2 id="test_status"></h2>
 			<div id="test"></div>	
+		</article>
+		<h3>ISO OSI model</h3>
+		<article class="iso">
+		<table class="left">
+		<tr><td id="draggable">HTTP SMTP POP3 FTP Telnet</td></tr>
+		<tr><td id="draggable">TCP UDP</td></tr>
+		<tr><td id="draggable">IPv4 IPv6</td></tr>
+		<tr><td id="draggable">Ethernet Frame Relay PPP FDDI</td></tr>
+		</table>
+		<table class="right">
+		<tr>
+			<th>ISO OSI model</th>
+			<th>Dáta</th>
+			<th>Protokoly</th>
+			<th>TCP/IP model</th>
+		</tr>
+		<tr>
+			<td>Aplikačná vrstva</td>
+			<td rowspan="3">Dáta</td>
+			<td rowspan="3"></td>
+			<td rowspan="3">Aplikačná vrstva</td>
+		</tr>
+		<tr>
+			<td>Prezentačná vrstva</td>
+		</tr>
+		<tr>
+			<td>Relačná vrstva</td>
+		</tr>
+		<tr>
+			<td>Transportná vrstva</td>
+			<td>Segmenty</td>
+			<td id="droppable"></td>
+			<td>Transportná vrstva</td>
+		</tr>
+		<tr>
+			<td>Sieťová vrstva</td>
+			<td>Pakety</td>
+			<td id="droppable"></td>
+			<td>Sieťová vrstva</td>
+		</tr>
+		<tr>
+			<td>Data-linková(Spojová)</td>
+			<td>Rámce</td>
+			<td rowspan="2" id="droppable"></td>
+			<td rowspan="2">Sieťový prístup</td>
+		</tr>
+		<tr>
+			<td>Fyzická vrstva</td>
+			<td>Bity</td>
+		</tr>
+		</table>
 		</article>
 	</div>
 	<script type="text/javascript">

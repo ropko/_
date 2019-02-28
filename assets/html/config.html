@@ -1,0 +1,66 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Konfigurácia</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
+	<link href="../style/style.css" rel="stylesheet" >
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	<script>
+    $( function() {
+      $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
+      $( "#accordion" ).accordion();
+            } );
+  </script>
+</head>
+<body>
+	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	<article id='mid'>
+		<h2>V tejto časti stránky sa môžeš bližšie zoznámiť s konfiguráciou <a href="#router">Routra</a>, <a href="#switch">Switcha</a> a <a href="#acl">Access-control listov</a>
+		</h2>
+		<div id="accordion">
+			<h3 id="router">Router</h3>
+			<article>
+
+			</article>
+			<h3 id="switch">Switch</h3>
+			<article id="left">
+				<p>Switch>enable</p>
+				<p>Switch#configure terminal</p>
+				<p id="white">Pomocou tohto príkazu sa dostaneme do konfiguračného módu a môžeme upravovať nastavenia</p>
+					<h4>Nastavenie mena</h4>
+						<p>Switch(config)#hostname <mark id="red">"MENO"</mark></p>
+						<p><mark id="red">"MENO"</mark> -tu si zvolíme meno switchu</p>
+						<p>"MENO"(config)#</p>
+					<h4>Vytvorenie a nastavenie VLAN</h4>
+						<p>Switch(config)#vlan <mark id="green">"CISLO"</mark></p>
+						<p><mark id="green">"CISLO"</mark> - tu si nastavíme číslo VLAN</p>
+						<p>Switch(config-vlan)#name <mark id="red">"MENO"</mark></p>
+					<h4>Nastavenie IP adresy na VLAN</h4>
+						<p id="white">V prípade switcha priďelujeme IP adresy nie na interface ale na VLAN !</p>
+						<p>Switch(config)#interface vlan 10</p>
+						<p>Switch(config-if)#ip address 192.168.10.1 255.255.255.0</p>
+						<p id="red">!Nesmieme zabudnúť zapnúť interface !</p>
+						<p>Switch(config-if)#no shutdown</p>
+					<h4>Bezpečnosť switchu</h4>
+						<p>Switch(config)#interface fastEthernet 0/1</p>
+						<p>Switch(config-if)#switchport mode access </p>
+						<p>Switch(config-if)#switchport access vlan 10</p>
+						<p id="white">Musíme povoliť vlan</p>
+						<p>Switch(config-if)#switchport port-security mac-address <mark id="red">sticky</mark> | <mark id="green">"MASKA"</mark></p>
+						<p><mark id="red">sticky</mark> -systém si zapamätá MAC adresu pripojeného zariadenia</p>
+						<p><mark id="green">"MASKA"</mark> -môžeme ručne zapísať masku, ktorú chceme povoliť v systéme </p>
+						<p>Switch(config-if)#switchport port-security violation <mark id="white">protect</mark> | <mark id="black">restrict</mark> | <mark id="red">shutdown</mark></p>
+						<ol>
+							<li><mark id="white">protect</mark> -rámec s nepovolenou MAC adresou sa zahodí.</li>
+							<li><mark id="black">restrict</mark> -rámec s nepovolenou MAC adresou sa zahodí a zároveň sa pošle správa adminovi.</li>
+							<li><mark id="red">shutdown</mark> -port sa pri prijatí rámca od nepovolenej MAC adresy vypne.</li>
+						</ol>
+			</article>
+			<h3 id="acl">Access-control list</h3>
+			<article>
+
+			</article>
+</body>

@@ -19,10 +19,12 @@ h2 {
   margin-top: 25px;
   }
 h3{
+  margin-top: 10px;
   font-size: 1.7em;
   font-family: 'Rokkitt', serif;
   }
 h4{
+  padding: 0px;
 	font-size: 1.6em;
 	text-align: left;
 }

@@ -284,3 +284,25 @@ th,td {
 .acl p{
   font-size: 1.3em;
 }
+.fill {
+  border: solid 3px red;
+  text-align: center;
+  cursor: pointer;
+  height: 20%;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.empty {
+  height: 31%;
+  color: black;
+  border: solid 3px salmon;
+  background: white;
+}
+
+.hovered {
+  background: #f4f4f4;
+  border-style: dashed;
+}

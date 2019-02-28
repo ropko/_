@@ -14,26 +14,13 @@
 	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
  	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- 	<script>
-  $( function() {
-    $( "#draggable" ).draggable();
-    $( "#droppable" ).droppable({
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
-        }
-    });
-  } );
-  </script>	
+ 	<script src="main.js"></script>
 	<script>
 	    $( function() {
 	    $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
 	    $( "#accordion" ).accordion();
 	            } );
 	</script>
-	<script>$('#sortable').dragable();</script>
 </head>
 <body>
 	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
@@ -54,54 +41,39 @@
 		</article>
 		<h3>ISO OSI model</h3>
 		<article class="iso">
-		<table class="left">
-		<tr><td id="draggable">HTTP SMTP POP3 FTP Telnet</td></tr>
-		<tr><td id="draggable">TCP UDP</td></tr>
-		<tr><td id="draggable">IPv4 IPv6</td></tr>
-		<tr><td id="draggable">Ethernet Frame Relay PPP FDDI</td></tr>
-		</table>
-		<table class="right">
-		<tr>
-			<th>ISO OSI model</th>
-			<th>Dáta</th>
-			<th>Protokoly</th>
-			<th>TCP/IP model</th>
-		</tr>
-		<tr>
-			<td>Aplikačná vrstva</td>
-			<td rowspan="3">Dáta</td>
-			<td rowspan="3"></td>
-			<td rowspan="3">Aplikačná vrstva</td>
-		</tr>
-		<tr>
-			<td>Prezentačná vrstva</td>
-		</tr>
-		<tr>
-			<td>Relačná vrstva</td>
-		</tr>
-		<tr>
-			<td>Transportná vrstva</td>
-			<td>Segmenty</td>
-			<td id="droppable"></td>
-			<td>Transportná vrstva</td>
-		</tr>
-		<tr>
-			<td>Sieťová vrstva</td>
-			<td>Pakety</td>
-			<td id="droppable"></td>
-			<td>Sieťová vrstva</td>
-		</tr>
-		<tr>
-			<td>Data-linková(Spojová)</td>
-			<td>Rámce</td>
-			<td rowspan="2" id="droppable"></td>
-			<td rowspan="2">Sieťový prístup</td>
-		</tr>
-		<tr>
-			<td>Fyzická vrstva</td>
-			<td>Bity</td>
-		</tr>
-		</table>
+			<div class"protokoly">
+				<div class="fill" draggable="true" > 
+					<p>HTTP SMTP POP3 FTP Telnet</p>
+	    		</div>
+	    		<div class="fill" draggable="true">
+	    			<p>TCP UDP</p>
+	    		</div>
+		    	<div class="fill" draggable="true" > 
+		    		<p>Ethernet Frame Relay PPP FDDI</p>
+		    	</div>
+		    	<div class="fill" draggable="true" > 	
+		    		<p>IPv4 IPv6</p>
+		    	</div>			  
+		    </div>
+		    <div class="vrstvy">
+			 	<div class="empty">
+			 		<p>Aplikačná vrstva</p>
+					<p>Prezentačná vrstva</p>
+					<p>Relačná vrstva</p>
+			  	</div>
+
+				<div class="empty">
+					<p>Transportná vrstva</p>
+			 	</div>
+			  
+			  	<div class="empty">
+			  		<p>Sieťová vrstva</p>
+			  	</div>	
+			  	<div class="empty">
+			  		<p>Data-linková(Spojová)</p>
+					<p>Fyzická vrstva</p>
+			  	</div>
+			</div>
 		</article>
 	</div>
 	<script type="text/javascript">
@@ -137,7 +109,8 @@
 	      vystup+=$("li:nth-of-type("+i+")").data("poradie");
 	    if(vystup==dobre){
 	    	vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
-		}else{
+	    	}
+	    	else{
 			vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je nesprávna</h2>";
 			}
 	  });

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Overenie vedomostí</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
+	<link href="../style/style.css" rel="stylesheet" >
+	<script src="../script/jquery.ui.touch-punch.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	    $( function() {
+	    $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
+	    $( "#accordion" ).accordion();
+	            } );
+	</script>
+</head>
+<body>
+	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	<h1>Vyber si tému, z ktorej si chceš overiť svoje vedomosti</h1>
+	<div id="accordion">
+		<h3>Základné nastavenie routra</h3>
+		<article>
+			<p>Zoraď do správneho poradia úvodnú konfiguráciu routra</p>
+			<div id="vyhodnotit">
+				<ul id="sortable"></ul>
+				<button >Vyhodnotit</button>
+			</div>
+		</article>
+		<h3>Vedomosti o základných súčastiach siete</h3>
+		<article>
+			<h2 id="test_status"></h2>
+			<div id="test"></div>	
+		</article>
+		<h3>ISO OSI model</h3>
+		<article class="iso">
+			<div class"protokoly">
+				<div class="fill" draggable="true" > 
+					<p>HTTP SMTP POP3 FTP Telnet</p>
+	    		</div>
+	    		<div class="fill" draggable="true">
+	    			<p>TCP UDP</p>
+	    		</div>
+		    	<div class="fill" draggable="true" > 
+		    		<p>Ethernet Frame Relay PPP FDDI</p>
+		    	</div>
+		    	<div class="fill" draggable="true" > 	
+		    		<p>IPv4 IPv6</p>
+		    	</div>			  
+		    </div>
+		    <div class="vrstvy">
+			 	<div class="empty">
+			 		<p>Aplikačná vrstva</p>
+					<p>Prezentačná vrstva</p>
+					<p>Relačná vrstva</p>
+			  	</div>
+
+				<div class="empty">
+					<p>Transportná vrstva</p>
+			 	</div>
+			  
+			  	<div class="empty">
+			  		<p>Sieťová vrstva</p>
+			  	</div>	
+			  	<div class="empty">
+			  		<p>Data-linková(Spojová)</p>
+					<p>Fyzická vrstva</p>
+			  	</div>
+			</div>
+		</article>
+	</div>
+	<script type="text/javascript">
+	 var questionData={
+	    "question":"Ulož do správneho poradia príkazy,aby si nastavil meno routra",
+	    "answers":{
+	      "1":"Router>enable",
+	      "2":"Router#configure terminal",
+	      "3":"Router(config)#hostname NAME",
+	      "4":"NAME(config)#"
+	     }
+	    } 
+  	$( "#questionText" ).text(questionData.question)
+  	for (const order in questionData.answers ) {
+    const question= questionData.answers[order];
+    $( "#sortable" ).append('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+question+'</li>')
+    console.log(question)
+ 	 };
+  	$( "#sortable" )
+ 	</script>
+	<script>
+	  $( function() {
+	    $( "#sortable" ).sortable();
+	    $( "#sortable" ).disableSelection();
+	  } );
+	  const min= "1"
+	  const max= "4"
+	  var dobre = "1234";
+	  var vystup = "";
+	  $("#vyhodnotit").click(function(){
+	   
+	    for(var i=1;i<= 4;i++)
+	      vystup+=$("li:nth-of-type("+i+")").data("poradie");
+	    if(vystup==dobre){
+	    	vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
+	    	}
+	    	else{
+			vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je nesprávna</h2>";
+			}
+	  });
+	  function getRndInteger(min, max) {
+	    return Math.floor(Math.random() * (max - min) ) + min;
+	}
+	  $("li:nth-of-type(1)").data("poradie",1);
+	  $("li:nth-of-type(2)").data("poradie",2);
+	  $("li:nth-of-type(3)").data("poradie",3);
+	  $("li:nth-of-type(4)").data("poradie",4);
+	</script>
+	<script>
+		var pos = 0, test, test_status, question, choices, chA, chB, chC, correct = 0;
+		var questions = [
+		[   "Ktoré zariadenie prepína na základe Mac Adries?", "Switch", "Hub", "Router", "A" ],
+		[   "Ktoré zariadenie prepína na základe IP Adries?", "Switch", "Hub", "Router", "C" ],
+		[   "Ktoré zariadenie skopíruje prijaté dáta na všetky ostatné porty?", "Switch", "Hub", "Router", "B" ],
+		[   "Ktorá sieť je využívaná lokálne?", "LAN", "MAN", "WAN", "A" ]
+		];
+	function _(x) {
+			return document.getElementById(x);
+		}
+	function renderQuestion() {
+		test = _("test");
+		if(pos >= questions.length){
+			test.innerHTML = "<h2>Máš "+correct+" zo "+questions.length+" otázok správne</h2>";
+			_("test_status").innerHTML = "Test je dokončený";
+			pos = 0;
+			correct = 0;
+			return false;
+		}
+		_("test_status").innerHTML = "Otázka "+(pos+1)+" z "+questions.length;
+		var question = questions[pos][0];
+		chA = questions[pos][1];
+		chB = questions[pos][2];
+		chC = questions[pos][3];
+		test.innerHTML = "<p>"+question+"</p>";
+		test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+		test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+		test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+		test.innerHTML += "<button onclick='checkAnswer()' class='button5'>Ďalej</button>";
+	}
+	function checkAnswer() {
+		choices = document.getElementsByName("choices");
+		for(var i=0; i<choices.length; i++) {
+			if(choices[i].checked){
+				choice = choices[i].value;
+			}
+		}
+		console.log("Choice: "+choice);
+		console.log("Answer: "+questions[pos][4]);
+		if(choice == questions[pos][4]){
+			correct++;
+		} 
+		pos++;
+		console.log("Position: "+pos);
+		console.log("Correct: "+correct);
+		renderQuestion();
+	}
+	window.addEventListener("load", renderQuestion, false);
+	</script>
+	<script type="text/javascript">
+	const fill = document.querySelector('.fill');
+const empties = document.querySelectorAll('.empty');
+
+
+  fill.addEventListener('dragstart', dragStart, false);`
+  fill.addEventListener('dragend', dragEnd, true );
+// Loop through empty boxes and add listeners
+for (const empty of empties) {
+  empty.addEventListener('dragover', dragOver);
+  empty.addEventListener('dragenter', dragEnter);
+  empty.addEventListener('dragleave', dragLeave);
+  empty.addEventListener('drop', dragDrop);
+}
+
+// Drag Functions
+
+function dragStart() {
+  console.log('start')
+  this.className += ' hold';
+  setTimeout(() => (this.className = 'invisible'), 0);
+}
+
+function dragEnd() {
+  this.className = 'fill';
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.className += ' hovered';
+}
+
+function dragLeave() {
+  this.className = 'empty';
+}
+
+function dragDrop() {
+  this.className = 'empty';
+  this.append(fill) ; 
+}</script>
+</body>
+</html>

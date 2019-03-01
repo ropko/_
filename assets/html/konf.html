@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="../style/style.css" rel="stylesheet" >
+	<title>Konfigurácia</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a> 
+	<h1>Konfigurácia</h1>
+	<div id="size">
+	<ul>
+		<li>Router> enable  -  zadám príkaz enable </li>
+		<li>Router# configurate terminal - zadám príkaz skrátene <b>conf t</b>, tým sa dostanem do konfiguračného módu</li>
+		<li>Router(config)# - konfiguračný mód</li>
+	</ul>
+	<p>Po vstupe do konfigučného módu zadám jednoduchý príkaz na konfiguráciu <b>ospf</b> protokolu</p>
+	<ul><li>Router(config)# routre ospf 1</li></ul>
+	<p>príkaz <b>router ospf</b> "povie" routru o aký komunikačný protokol sa jedná a pre úspešné spustenie je nutné napiísať aj číslo procesu. Toto číslo identifikuje konfiguráciu a je potrebné pre další proces</p>
+	<ul><li>Router(config-router)# network 192.168.1.0 0.0.0.255 area 1</li></ul>
+	<p>Ďalším krokom je informovanie o sieťach v ktoré sú priamo pripojené ku routru, ako príkaz píšeme <b>network</b> a za tým ip adresu siete a jej wild card masku. Pri ospf je podstaté za wild card masku písať aj areu(oblasť) pre ktoré bude dané ospf pracovať. Je podstatné spraviť ospf konfiguráciu na všetých routroch lebo inak prenos packetov nebude možný.</p>
+	<img src="../img/ospf1.PNG" width="500px" height="auto" class="margin2">
+	<h2>Zopakovanie</h2>
+	<ul><li>Router> enable</li>
+		<li>Router# configurate terminal </li>
+		<li>Router(config)# routre ospf 1</li>
+		<li>Router(config-router)# network 192.168.1.0 0.0.0.255 area 1</li>
+	</ul>
+	
+	<h2>Ovplyvnenie DR a BDR</h2>
+	<ul><li><b>Router(config-router)# ip ospf priority</b> číslo</li></ul>
+	<p>Nastavenie špecifickej priority rozhraniu smerovača. Čím vyššie číslo tým vyššia priorita. Rozsah čísel je od 0 - 255 </p>
+	<h2>Redistribúcia</h2>
+	<p>Redsitribúcia slúži na to aby sa packety vedeli posíelať aj medzi rôznymi komunikačnými protokolmi. Pre ospf sa na koniec konfigurácie susedných sietí píše prikaz na redistribúciu. Pre všetky ostatné protokoly je príkaz rovnaký</p>
+	<ul><li>Router(config-router)# redistribute eigrp 1 subnets</li></ul>
+	<p><b>eigrp 1</b>komunikačný protokol ktorý chcem prekladať, <b>subnets</b> slúži na preklad</p>	
+	<h2>NAT / PAT</h2>
+	<ul><li>Router(config-router)#default-information originate</li></ul>
+	<p>Pri konfigurácií NAT alebo PAT sa nesie do ospf network písať ip adresa, ktorá má slúžiť pre NATko. Ale ak by sme to nijak inak nedefinovali tak by sa nám po konfigurácií nepodarilo pingnúť na router na ktorom je NATko. Preto je nutné to definovať príkazom <b>default-information originate</b></p>
+	<h2>AREA</h2>
+	<img src="../img/ospf2.PNG" width="600px" height="auto" class="margin" >
+	<p>Ako už bolo spomenuté v ospf poznáme viacero oblastí(area). Pri jednoduchom konfigurovaní používame vždy rovnaké číslo, avšak čo ked máme použiť viacero oblastí. Pri konfigurácií s viacerými oblasťami treba pamätať na to že vždy je nutné mať "main" router, čiže router ktorého interfacy sa budú nachádzať v area 0. Area 0 je totiž základná a vdaka nej vedia zariadenia komunikovať aj medzi viacerými oblasťami, vid na obrázku.</p>
+</div>
+</body>
+</html>

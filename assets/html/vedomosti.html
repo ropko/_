@@ -82,15 +82,25 @@
 	      "1":"Router>enable",
 	      "2":"Router#configure terminal",
 	      "3":"Router(config)#hostname NAME",
-	      "4":"NAME(config)#"
+	      "4":"NAME(config)#enable secret cisco",
 	     }
 	    } 
+
+
   	$( "#questionText" ).text(questionData.question)
+  	var answerSize=0;
+  	
+  	var otazky=Array();
+
   	for (const order in questionData.answers ) {
     const question= questionData.answers[order];
-    $( "#sortable" ).append('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+question+'</li>')
+    //$( "#sortable" ).append('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+question+'</li>')
+    otazky.push('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+question+'</li>');
     console.log(question)
  	 };
+ 	 otazky.sort(function() { return 0.5 - Math.random() });
+    for(i=0;i<otazky.length;i++)
+    	$( "#sortable" ).append(otazky[i]);
   	$( "#sortable" )
  	</script>
 	<script>
@@ -171,12 +181,12 @@
 	}
 	window.addEventListener("load", renderQuestion, false);
 	</script>
-	<script type="text/javascript">
-	const fill = document.querySelector('.fill');
+<script type="text/javascript">
+const fill = document.querySelector('.fill');
 const empties = document.querySelectorAll('.empty');
 
 
-  fill.addEventListener('dragstart', dragStart, false);`
+  fill.addEventListener('dragstart', dragStart, false);
   fill.addEventListener('dragend', dragEnd, true );
 // Loop through empty boxes and add listeners
 for (const empty of empties) {
@@ -214,6 +224,7 @@ function dragLeave() {
 function dragDrop() {
   this.className = 'empty';
   this.append(fill) ; 
-}</script>
+}
+</script>
 </body>
 </html>

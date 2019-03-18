@@ -1,0 +1,49 @@
+body {
+	background-image:  url('../img/obr2.jpg');
+	font-family: 'Poppins', sans-serif;
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.hover-button{
+	border-radius: 2rem;
+	background-color: transparent;
+	font-size: 2rem;
+	text-transform: uppercase;
+	padding:0.5rem 5rem;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: 500;
+}
+.hover-button:hover:before {
+	margin-left: 0;
+
+}
+
+.hover-button span {
+	position: relative;
+	z-index: 1;
+}
+
+.hover-button:before {
+	content: '';
+	height: 100%;
+	width: 200%;
+	margin-left:-100%;
+	position: absolute;
+	top:0;left:0;right:0;bottom:0;
+	z-index: 1;
+	background: linear-gradient(to right, #00BCD4, #027ab0, #030762, #027ab0, #12c2e9);
+	filter: contrast(150%);
+	transition: 0.3s;
+}
+a {
+	text-decoration: none;
+	color: white;
+}

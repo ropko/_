@@ -89,9 +89,7 @@
 			
 				<p id="vys">Treba uvrdomiť čo znamená prefix (maska) siete. Maska siete určuje počet voľných hostov ktoré máme k dispozícií. Z týchto voľných hostov budeme vytvárať násladne podsiete pre určné oddelenia.<br><b>Jednotlivé masky majú rôzne počty hostov.</b></p>
 				<img src="../img/subnet_list.jpg" class="margin">
-				
-				<ol>
-				<div id="jstf">			
+				<ol>			
 				<li id="vys">Krokom  číslom 1 pri správnom nastavení vlsm je zoradenie hostov od najväčšieho po najmenší.<br> V našom prípade by sme si zoradili zariadenia nasledovne.</li>
 				<ul>
 					<li><b>100</b></li>
@@ -100,7 +98,7 @@
 				</ul>
 
 				<li id="vys">Ako prvé je prvé oddelenie v ktorom máme 100 PC. To znamená, že je nutné si vybrať takú masku do ktorej sa nám vojde 100 PC. Preto si vyberieme masku ktorá má veľkosť 255.255.255.128 (/25). Táto sieť nám poskytuje dostatok hostov pre naše oddelenie. Ak máme masku siete /25, znamená to, že k dispozícií <b>je 126 hostov.</b><br> <b>Prečo ale maska končí čislom 128?</b>Pri každom podsieťovaní si treba pamätať že 2 hosty méme použité na <b>adresu siete a broadcast</b>
-				<p id="vel"><b>Takže ako asi bude vyzerať náš zápis?</b></p>
+				<p style="margin-top: 10px; font-size: 16px"><b>Takže ako asi bude vyzerať náš zápis?</b></p>
 
 					<ul style="margin-top: 15px;">
 						<li>Adresa siete: 192.168.1.0 (adresa siete musí byť vždy párne číslo, začína sa ratať aj s 0)</li>
@@ -110,7 +108,7 @@
 					</ul>	
 				</li>
 				<li id="vys">Máme rozdelené ip pre prvé oddelenie a teraz k tomu priradíme ip aj pre druhé oddelenie. V 2. oddelení sa nachádza 50 PC z čoho sme si zvolili, že pre nás bude najlepšia maska /26. Táto maska poskytuje 62 voľných hostov. Treba si pamätať, že teraz priradzujeme ip nie od začiatku ako v prvom prípade (od 192.168.1.0) ale od skončenia predchádzajúcej podsiete. Naša predchádzajúca sieť mala <b>Broadcastovu adresu</b> 192.168.1.127.</li>
-				<p id="vel"><b>Ako teda to bude vyzerať?</b></p>	
+				<p style="font-size: 16px"><b>Ako teda to bude vyzerať?</b></p>	
 				<ul>
 					<li>Adresa siete: 192.168.1.128</li>
 					<li>Maska siete: 255.255.255.192</li>
@@ -124,10 +122,8 @@
 					<li>Prvý a posledný host: 192.168.1.193 - 192.168.1.222</li>
 					<li>Broadcast: 192.168.1.223</li>
 				</ul>
-				<p id="vel">IP sú rozdané správne a všetko funguje ako má. Na zopakovanie si určte nejakú počiatočnú ip adresu od ktorej si budete vytvárať podsiete. Pre opätovnú kontrolu si vyhľadajte na internete VLSM calculator, kde si môžte skontrolovať svoje rozdelenie. :D</p>
-		</div>	
-	</ol>
-		
+				<p style="font-size: 16px">IP sú rozdané správne a všetko funguje ako má. Na zopakovanie si určte nejakú počiatočnú ip adresu od ktorej si budete vytvárať podsiete. Pre opätovnú kontrolu si vyhľadajte na internete VLSM calculator, kde si môžte skontrolovať svoje rozdelenie. :D</p>
+			</ol>
 		<h1>Konfigurácia Switchu</h1>
 		<button><a href="config.html">Pokračuj</a></button>
 		<h4>ROUTER</h4>

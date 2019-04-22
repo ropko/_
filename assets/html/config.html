@@ -22,8 +22,29 @@
 		</h2>
 		<div id="accordion">
 			<h3 id="router">Router</h3>
-			<article>
-
+			<article id="left">
+				<p>Router>enable</p>
+				<p>Router#configure terminal</p>
+				<p id="white">Pomocou tohto príkazu sa dostaneme do konfiguračného módu a môžeme upravovať nastavenia</p>
+					<h4>Nastavenie mena</h4>
+						<p>Router(config)#hostname <mark id="red">"MENO"</mark></p>
+						<p><mark id="red">"MENO"</mark> -zvolíme si meno routra</p>
+						<p>MENO(config)#</p>
+					<h4>Priradenie IP adresy</h4>
+						<p>Router(config)#interface <mark id="green">"INTERFACE"</mark> </p>
+						<p><mark id="green">"INTERFACE"</mark> -nastavíme, ktorý interface chceme nastavovať:</p>
+							<ul>
+								<li>Ethernet</li>
+								<li>FastEthernet</li>
+								<li>GigabitEthernet</li>
+							</ul>
+						<p>Router(config-if)#ip address  <mark id="white">IP</mark> <mark id="black">MASKA</mark></p>	
+							<ul>
+								<li><mark id="white">"IP"</mark>- zadáme funkčnú <a href="zaklady.html">IP adresu</a></li>
+								<li><mark id="black">MASKA</mark>- zadáme masku siete</li>
+							</ul>
+						<p>Router(config-if)#no shutdown</p>
+						<p id="red">!Nesmieme zabudnúť zapnúť interface !</p>
 			</article>
 			<h3 id="switch">Switch</h3>
 			<article id="left">
@@ -32,8 +53,8 @@
 				<p id="white">Pomocou tohto príkazu sa dostaneme do konfiguračného módu a môžeme upravovať nastavenia</p>
 					<h4>Nastavenie mena</h4>
 						<p>Switch(config)#hostname <mark id="red">"MENO"</mark></p>
-						<p><mark id="red">"MENO"</mark> -tu si zvolíme meno switchu</p>
-						<p>"MENO"(config)#</p>
+						<p><mark id="red">"MENO"</mark> -zvolíme si meno switchu</p>
+						<p>MENO(config)#</p>
 					<h4>Vytvorenie a nastavenie VLAN</h4>
 						<p>Switch(config)#vlan <mark id="green">"CISLO"</mark></p>
 						<p><mark id="green">"CISLO"</mark> - tu si nastavíme číslo VLAN</p>

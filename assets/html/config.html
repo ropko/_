@@ -23,65 +23,166 @@
 		<div id="accordion">
 			<h3 id="router">Router</h3>
 			<article id="left">
-				<p>Router>enable</p>
-				<p>Router#configure terminal</p>
+			<ol>
+				<li><p>Router>enable</p></li>
+				<li><p>Router#configure terminal</p></li>
 				<p id="white">Pomocou tohto príkazu sa dostaneme do konfiguračného módu a môžeme upravovať nastavenia</p>
 					<h4>Nastavenie mena</h4>
-						<p>Router(config)#hostname <mark id="red">"MENO"</mark></p>
+					<ol>
+						<li><p>Router(config)#hostname <mark id="red">"MENO"</mark></p></li>
 						<p><mark id="red">"MENO"</mark> -zvolíme si meno routra</p>
-						<p>MENO(config)#</p>
+						<li><p>MENO(config)#</p></li>
+					</ol>
+					<h4>Nastavenie hesla</h4>
+					<ol>
+					<li><p>Router(config)#enable <mark id="green">password</mark> | <mark id="red">secret</mark> "HESLO"</p></li>
+					<ul>
+						<li><mark id="green">password</mark> - pri zobrazení running-config je heslo priamo viditeľné.</li>
+						<li><mark id="red">secret</mark> - pri zobrazení running-config je heslo zahashované pomocou MD5 a nie je možné ho priamo prečítať.</li>
+					</ul>
+					</ol>
 					<h4>Priradenie IP adresy</h4>
-						<p>Router(config)#interface <mark id="green">"INTERFACE"</mark> </p>
+					<ol>
+						<li><p>Router(config)#interface <mark id="green">"INTERFACE"</mark></p></li>
 						<p><mark id="green">"INTERFACE"</mark> -nastavíme, ktorý interface chceme nastavovať:</p>
 							<ul>
 								<li>Ethernet</li>
 								<li>FastEthernet</li>
 								<li>GigabitEthernet</li>
 							</ul>
-						<p>Router(config-if)#ip address  <mark id="white">IP</mark> <mark id="black">MASKA</mark></p>	
+						<li><p>Router(config-if)#ip address  <mark id="white">IP</mark> <mark id="black">MASKA</mark></p></li>	
 							<ul>
 								<li><mark id="white">"IP"</mark>- zadáme funkčnú <a href="zaklady.html">IP adresu</a></li>
 								<li><mark id="black">MASKA</mark>- zadáme masku siete</li>
 							</ul>
-						<p>Router(config-if)#no shutdown</p>
+						<li><p>Router(config-if)#no shutdown</p></li>
 						<p id="red">!Nesmieme zabudnúť zapnúť interface !</p>
+					</ol>
+			</ol>
 			</article>
 			<h3 id="switch">Switch</h3>
 			<article id="left">
-				<p>Switch>enable</p>
-				<p>Switch#configure terminal</p>
+			<ol>
+				<li><p>Switch>enable</p></li>
+				<li><p>Switch#configure terminal</p></li>	
 				<p id="white">Pomocou tohto príkazu sa dostaneme do konfiguračného módu a môžeme upravovať nastavenia</p>
 					<h4>Nastavenie mena</h4>
-						<p>Switch(config)#hostname <mark id="red">"MENO"</mark></p>
-						<p><mark id="red">"MENO"</mark> -zvolíme si meno switchu</p>
-						<p>MENO(config)#</p>
-					<h4>Vytvorenie a nastavenie VLAN</h4>
-						<p>Switch(config)#vlan <mark id="green">"CISLO"</mark></p>
-						<p><mark id="green">"CISLO"</mark> - tu si nastavíme číslo VLAN</p>
-						<p>Switch(config-vlan)#name <mark id="red">"MENO"</mark></p>
-					<h4>Nastavenie IP adresy na VLAN</h4>
-						<p id="white">V prípade switcha priďelujeme IP adresy nie na interface ale na VLAN !</p>
-						<p>Switch(config)#interface vlan 10</p>
-						<p>Switch(config-if)#ip address 192.168.10.1 255.255.255.0</p>
-						<p id="red">!Nesmieme zabudnúť zapnúť interface !</p>
-						<p>Switch(config-if)#no shutdown</p>
-					<h4>Bezpečnosť switchu</h4>
-						<p>Switch(config)#interface fastEthernet 0/1</p>
-						<p>Switch(config-if)#switchport mode access </p>
-						<p>Switch(config-if)#switchport access vlan 10</p>
-						<p id="white">Musíme povoliť vlan</p>
-						<p>Switch(config-if)#switchport port-security mac-address <mark id="red">sticky</mark> | <mark id="green">"MASKA"</mark></p>
-						<p><mark id="red">sticky</mark> -systém si zapamätá MAC adresu pripojeného zariadenia</p>
-						<p><mark id="green">"MASKA"</mark> -môžeme ručne zapísať masku, ktorú chceme povoliť v systéme </p>
-						<p>Switch(config-if)#switchport port-security violation <mark id="white">protect</mark> | <mark id="black">restrict</mark> | <mark id="red">shutdown</mark></p>
 						<ol>
-							<li><mark id="white">protect</mark> -rámec s nepovolenou MAC adresou sa zahodí.</li>
-							<li><mark id="black">restrict</mark> -rámec s nepovolenou MAC adresou sa zahodí a zároveň sa pošle správa adminovi.</li>
-							<li><mark id="red">shutdown</mark> -port sa pri prijatí rámca od nepovolenej MAC adresy vypne.</li>
+							<li><p>Switch(config)#hostname <mark id="red">"MENO"</mark></p></li>
+							<p><mark id="red">"MENO"</mark> -zvolíme si meno switchu</p>
+							<li><p>MENO(config)#</p></li>						
 						</ol>
+					<h4>Vytvorenie a nastavenie VLAN</h4>
+						<ol>
+							<li><p>Switch(config)#vlan <mark id="green">"CISLO"</mark></p>
+							<p><mark id="green">"CISLO"</mark> - tu si nastavíme číslo VLAN</p></li>
+							<li><p>Switch(config-vlan)#name <mark id="red">"MENO"</mark></p></li>
+						</ol>
+					<h4>Nastavenie IP adresy na VLAN</h4>
+						<ol>
+							<p id="white">V prípade switcha priďelujeme IP adresy nie na interface ale na VLAN !</p>
+							<li><p>Switch(config)#interface vlan 10</p></li>
+							<li><p>Switch(config-if)#ip address 192.168.10.1 255.255.255.0</p></li>
+							<p id="red">!Nesmieme zabudnúť zapnúť interface !</p>
+							<li><p>Switch(config-if)#no shutdown</p></li>
+						</ol>
+					<h4>Bezpečnosť switchu</h4>
+						<ol>
+							<li><p>Switch(config)#interface fastEthernet 0/1</p></li>
+							<li><p>Switch(config-if)#switchport mode access </p></li>
+							<li><p>Switch(config-if)#switchport access vlan 10</p></li>
+							<p id="white">Musíme povoliť VLAN</p>
+							<li><p>Switch(config-if)#switchport port-security mac-address <mark id="red">sticky</mark>|<mark id="green">"MASKA"</mark></p></li>
+							<p><mark id="red">sticky</mark> -systém si zapamätá MAC adresu pripojeného zariadenia</p>
+							<p><mark id="green">"MASKA"</mark> -môžeme ručne zapísať masku, ktorú chceme povoliť v systéme </p>
+							<li><p>Switch(config-if)#switchport port-security violation <mark id="white">protect</mark>|<mark id="black">restrict</mark>|<mark id="red">shutdown</mark></p></li>
+							<ul>
+								<li><mark id="white">protect</mark> -rámec s nepovolenou MAC adresou sa zahodí.</li>
+								<li><mark id="black">restrict</mark> -rámec s nepovolenou MAC adresou sa zahodí a zároveň sa pošle správa adminovi.</li>
+								<li><mark id="red">shutdown</mark> -port sa pri prijatí rámca od nepovolenej MAC adresy vypne.</li>
+							</ul>
+						</ol>
+			</ol>
 			</article>
 			<h3 id="acl">Access-control list</h3>
-			<article>
-
+			<article id="left">
+			<p>Router>enable</p>
+			<p>Router#configure terminal</p>
+			<h4>Vytvorenie ACL</h4>
+			<ul>
+				<li>
+					<p><b>Štandarné ACL</b></p>
+					<ol>
+						<li>
+							<p>Router(config)#ip access-list <mark id="green">standard</mark>  <mark id="white">"CISLO"</mark>|<mark id="black">"MENO"</mark></p>
+							<ul>
+								<li><mark id="white">"CISLO"</mark>- číselné označenie v rozmedzí 1-99</li>
+								<li><mark id="black">"MENO"</mark>- slovné označenie</li>
+							</ul>
+						</li>
+						<li>Router(config-std-nacl)# <mark id="green">permit|deny</mark> <mark id="red">any|host</mark></p>
+							<p><mark id="green">permit | deny</mark></p>
+							<ul>
+								<li>permit-povoľujeme prístup</li>
+								<li>deny-zakazujeme prístup</li>
+							</ul>
+							<p><mark id="red">any | host</mark></p>
+							<ul>
+								<li>any-akékoľvek zariadenie</li>
+								<li>host-konkrétny užívateľ</li>
+							</ul>
+						</li>
+							<p><mark id="red">!Musíme aplikovať na interface!</mark></p>
+						<li><p>Switch(config)#interface "INTERFACE"</p></li>
+						<li><p>Router(config-if)#ip access-group "ACL" <mark id="green">inside|outside</mark></p>
+						<p><mark id="green">inside | outside</mark></p>
+						<ul>
+							<li>inside-kontroluje vstupujúce dáta do interface</li>
+							<li>outside-kontroluje vystupujúce dáta do interface</li>
+						</ul>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><b>Rozšírené ACL</b></p>
+					<ol>
+						<li>
+							<p>Router(config)#ip access-list <mark id="red">extended</mark>  <mark id="white">"CISLO"</mark>|<mark id="black">"MENO"</mark></p>
+							<ul>
+								<li><mark id="white">"CISLO"</mark>- číselné označenie v rozmedzí 100-199</li>
+								<li><mark id="black">"MENO"</mark>- slovné označenie</li>
+							</ul>
+						</li>
+						<li>Router(config-ext-nacl)# <mark id="green">permit|deny</mark> <mark id="red">"PROTOKOL"</mark><mark id="white"> any|host</mark> <mark id="black"> any|host</mark><mark id="red"> eq "PORT"</mark> </p>
+							<p><mark id="green">permit | deny</mark></p>
+							<ul>
+								<li>permit-povoľujeme prístup</li>
+								<li>deny-zakazujeme prístup</li>
+							</ul>
+							<p><mark id="red">"PROTOKOL"</mark>-protokol, ktorý má povoliť/zakázať</p>
+							<p><mark id="white">any | host</mark>-nastavujeme zdrojovú adresu</p>
+							<ul>
+								<li>any-akákoľvek zdrojová adresa</li>
+								<li>host- konkrétny zdrojový užívateľ</li>
+							</ul>
+							<p><mark id="black">any | host</mark>-nastavujeme cieľovú adresu</p>
+							<ul>
+								<li>any-akákoľvek cieľová adresa</li>
+								<li>host- konkrétny cieľový užívateľ</li>
+							</ul>
+							<p><mark id="red">eq "PORT"</mark>-port, na ktorom beží protokol</p>
+						</li>
+						<p><mark id="red">!Musíme aplikovať na interface!</mark></p>
+						<li><p>Switch(config)#interface "INTERFACE"</p></li>
+						<li><p>Router(config-if)#ip access-group "ACL" <mark id="green">inside|outside</mark></p>
+						<p><mark id="green">inside | outside</mark></p>
+						<ul>
+							<li>inside-kontroluje vstupujúce dáta do interface</li>
+							<li>outside-kontroluje vystupujúce dáta do interface</li>
+						</ul>
+						</li>
+					</ol>
+				</li>
+			</ul>
 			</article>
 </body>

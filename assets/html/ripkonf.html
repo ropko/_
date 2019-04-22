@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konfigurácie RIP protokolu</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="../style/style.css" rel="stylesheet" >
+	
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+ <a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	<div id="size">
+		<div id="jstf">
+			<h1>Konfigurácia pre RIP protokol</h1>
+			<ul>
+		<li>Router> enable  -  zadám príkaz enable </li>
+		<li>Router# configurate terminal - zadám príkaz skrátene <b>conf t</b>, tým sa dostanem do konfiguračného módu</li>
+		<li>Router(config)# - konfiguračný mód</li>
+	</ul>
+	<p>Po vstupe do konfigučného módu zadám jednoduchý príkaz na konfiguráciu <b>RIP</b> protokolu</p>
+	<ul><li>Router(config)# routre rip</li></ul>
+	<p>príkaz <b>router rip</b> "povie" routru o aký komunikačný protokol sa jedná.</p>
+	<ul><li>Router(config-router)# version 2</li></ul>
+	<p>Zvolím si verziu s ktorou chcem pracovať</p>
+	<ul><li>Router(config-router)# network 192.168.1.0</li></ul>
+	<p>Pri konfigurovaní RIP protokolu sa nepíšu MAC adresy. Píše sa len adresa siete. </p>
+	<h2>Redistribúcia</h2>
+	<p>Pri RIP protokole sa redistribúcia konfiguruje veľmi jednoducho</p>
+	<ul><li>Router(config-router)# redistribute static</li></ul>
+</div>
+
+</div>
+<p style="margin-top: 15px"><a href="../html/rip.html">Späť</a> na teóriu</p>
+<p><a href="../html/protokoly.html">Späť</a> na protokoly</p>
+</body>
+</html>

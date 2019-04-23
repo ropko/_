@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EIGRP</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="../style/style.css" rel="stylesheet" >
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai|Rokkitt:700" rel="stylesheet">
+</head>
+<body>
+	<a href="index1.html"><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60" id="i"></a>
+	<div id="size">
+		<div id="jstf">
+			<h1>EIGRP</h1>
+			<p><b>Enhanced Interior Gateway Routing Protocol (EIGRP)</b> je pokročilý distance vector routing protocol, založený na princípe <b>Interior Gateway Routing Protocol (IGRP)</b>. EIGRP sa používa na smerovačoch na zdieľanie trás s inými smerovačmi v rámci rovnakého autonómneho systému . Na rozdiel od iných dobre známych smerovacích protokolov, ako je napríklad<b> RIP</b> , EIGRP odosiela iba nové aktualizácie, čo znižuje pracovné zaťaženie smerovača a množstvo údajov, ktoré je potrebné prenášať.</p>
+
+			<h1>EIGRP si udržiava 3 tabuľky</h1>
+			<h2>Tabuľka susedov</h2>
+			<p>V tabuľke susedov sú všetky susedné EIGRP routre. Po nájdení nového suseda je zaznamenaná informácia o adrese a o rozhraní suseda. Táto informácia je uložená v dátovej štruktúre susedov. Keď sused pošle hello paket, oznámi v ňom hold time, po uplynutí tohto času je sused označený ako nedosiahnuteľný a zmeny musia byť prepočítané do novej topológie. EIGRP posiela hello pakety každých 5 sekúnd na odkazy s vysokou šírkou pásma a každých 60 sekúnd na prepojeniach s viacerými bodmi s nízkou šírkou pásma.</p><ul><li> show ip eigrp neighbors – zobrazí všetkých EIGRP susedov</li></ul>
+			<p>Rýchlosť s ktorou EIGRP posiela hello pakety, sa nazýva hello interval a môžete si to nastaviť na rozhranie s príkazom<ul><li> ip hello-interval eigrp</li></ul>
+			</p>
+			<p><b>The Hold time</b> je čas v ktorom považuje router svojho suseda za "živého" bez obdržania <b>Hello packetu.</b> Hold time je zvyčajne trojnásobok hello intervalu, štandardne 15 sekúnd a 180 sekúnd. Hold time si môžete nastaviť pomocou príkazu</p><ul><li> ip hold-time eigrp. </li></ul>
+
+
+			<h2>Topologická tabuľka</h2>
+				<p>tvoria ju všetky smerovacie tabuľky v AS. <b>Diffusing Update Algorithm (DUAL)</b>, použije informácie z tabuľky susedov a topologickej tabuľky na výpočet nižšej ceny smerovania do každého cieľového miesta.</p><ul><li> show ip route eigrp – zobrazenie topologickej tabuľky</li></ul>
+
+			<h2>Smerovaciu tabuľku</h2>
+				<p>Udržiava len najlepšiu cestu do cieľa.</p>
+				<p><b>Successor</b> (následník), je susedný router na ceste do daného cieľa</p>
+				<p><b>Feasible successor (FS)</b>, (možný náhradník) je náhradník smerovania, má tiež prístup do danej siete z inou metrikou. Je zaznamenaný v topologickej tabuľke. Cena možných susedov je vypočítaná od vzdialenosti routra k cieľu.</p>
+				<p style="color: white"><b>Obsah topologickej tabuľky</b></p>
+				<ul>
+					<li><b>Feasible distance</b> je najnižšia vypočítaná metrika do každého cieľa.</li>
+					<li><b>Route source</b> je identifikačné číslo routra, ktorý oznámil smerovanie.</li>
+					<li><b>Reported distance</b> oznámenie o vzdialenosti a o dĺžke cesty ku špecifickému cieľu.</li>
+					<li><b>Interface information</b> označuje rozhranie, cez ktoré je cieľ dosiahnuteľný.</li>
+					<li><b>Route status</b> je označený ako <b>pasívne</b>(P), čo znamená, že smerovanie je pripravené na použitie, alebo <b>aktívne</b>(A), smerovanie sa musí ešte prepočítať cez DUAL</li>
+				</ul>
+
+					<a href="../html/eigrpkonf.html"><h1>Konfigurácia</h1></a>
+
+
+		</div>
+
+
+
+
+	</div>
+	
+<p><a href="../html/protokoly.html">Späť</a> na protokoly</p>
+</body>
+</html>

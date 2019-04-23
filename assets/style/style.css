@@ -212,7 +212,7 @@ th,td {
   color: white;
 }
 #black{
-  color: black;
+  color: #B507DB;
 }
 #vys {
   margin-top: 15px;
@@ -224,8 +224,6 @@ display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-
 #size {
    width: 1000px;
   margin-left: 16%;
@@ -306,22 +304,36 @@ display: block;
   cursor: pointer;
   height: 20%;
 }
-
-.l1 .l2 .l3 .l4 {
-  border: solid 5px #ccc;
-}
-
-.v1 .v2 .v3 .v4 {
-  height: 31%;
-  color: black;
-  border: solid 3px salmon;
-  background: white;
-}
-
 .hovered {
   background: #f4f4f4;
   border-style: dashed;
 }
+.vrstva{
+      display: flex;
+      justify-content:space-between;
+      flex-direction: column;
+      float: right;
+    }
+.protokol{
+      display: flex;
+      justify-content:space-between;
+      flex-direction: column;
+      float: left;
+      }
+.box1 {
+      text-align: center;
+      float: right;
+      margin: 12px;
+      padding: 10px;
+      border: 1px solid red;
+      }
+.box2 {
+      text-align: center;
+      float: left;
+      margin: 12px;
+      padding: 10px;
+      border: 1px solid inherit;
+      }
 
 
 @media screen and (max-width: 1300px){
@@ -546,7 +558,4 @@ display: block;
 }
 #margin {
   display: none;
-}
-
-
 }

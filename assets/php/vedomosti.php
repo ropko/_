@@ -77,7 +77,6 @@
 		    <div class="box1" ondrop="drop006(event)" ondragover="allowDrop001(event)" id="place001">Aplikačná vrstva
 																									Prezentačná vrstva
 																									Relačná vrstva</div>
-
 		    <div class="box1" ondrop="drop007(event)" ondragover="allowDrop002(event)" id="place002">Transportná vrstva</div>
 
 		    <div class="box1" ondrop="drop008(event)" ondragover="allowDrop003(event)" id="place003">Sieťová vrstva</div>
@@ -90,8 +89,7 @@
 	</div>
 	<!-- TEST1-->
 	<script type="text/javascript">
-	 function renderQuestion(){
-	 var questionData={
+	var questionData={
 	    "question":"Ulož do správneho poradia príkazy,aby si nastavil meno routra",
 	    "answers":{
 	      "1":"Router>enable",
@@ -107,7 +105,6 @@
     console.log(question)
  	 };
   	$( "#sortable" )
-  	}
  	</script>
 	<!-- VYHODNOT TEST1-->
 	<script>
@@ -125,14 +122,23 @@
 	    if(vystup==dobre){
 	    	
 	    	vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
-	    	vyhodnotit.innerHTML += "<button onclick='checkAnswer()' class='button5'>Skúsiť znova</button>";
+	    	vyhodnotit.innerHTML += "<button onclick='reset()' class='button5'>Skúsiť znova</button>";
 	    	}
 	    else{
 			vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je nesprávna</h2>";
-			vyhodnotit.innerHTML += "<button onclick='checkAnswer()' class='button5'>Skúsiť znova</button>";
+			vyhodnotit.innerHTML += "<button onclick='reset()' class='button5'>Skúsiť znova</button>";
 			}
 		document.cookie="test1=1";
 	  });
+	  function reset(){
+	  $( "#questionText" ).text(questionData.question)
+  		for (const order in questionData.answers ) {
+    	const question= questionData.answers[order];
+    	$( "#sortable" ).append('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+question+'</li>')
+    	console.log(question)
+		document.cookie="test2=0";
+		};
+	  };
 	  //RANDOM TEST1
 	  function getRndInteger(min, max) {
 	    return Math.floor(Math.random() * (max - min) ) + min;
@@ -162,10 +168,10 @@
 			test.innerHTML = "<h2>Máš "+correct+" zo "+questions.length+" otázok správne</h2>";
 			_("test_status").innerHTML = "Test je dokončený";
 			test.innerHTML += "<button onclick='renderQuestion()' class='button5'>Skúsiť znova</button>";
+			document.cookie="test2=0";
 			pos = 0;
 			correct = 0;
 			return false;
-		document.cookie="test2=1";
 		}
 		_("test_status").innerHTML = "Otázka "+(pos+1)+" z "+questions.length;
 		var question = questions[pos][0];
@@ -195,6 +201,7 @@
 		console.log("Position: "+pos);
 		console.log("Correct: "+correct);
 		renderQuestion();
+		document.cookie="test2=1";
 	}
   	window.addEventListener("load", renderQuestion, false);
 	</script>
@@ -221,6 +228,7 @@
 			testik.innerHTML = "<h2>Máš "+spravne+" zo "+otazky.length+" otázok správne</h2>";
 			_("status").innerHTML = "Test je dokončený";
 			testik.innerHTML += "<button onclick='renderQuestions()' class='button5'>Skúsiť znova</button>";
+			document.cookie="test3=0";
 			posi = 0;
 			spravne = 0;
 			return false;
@@ -252,6 +260,7 @@
 		console.log("Position: "+posi);
 		console.log("Correct: "+spravne);
 		renderQuestions();
+		document.cookie="test3=1";
 	}
 	window.addEventListener("load", renderQuestions, false);
 	</script>
@@ -329,9 +338,6 @@
 
 	function drop004(event) {
 	    event.preventDefault();
-	}
-	if (b == 4){
-	iso.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
 	}
 </script>
 </body>

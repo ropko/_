@@ -90,6 +90,7 @@
 	</div>
 	<!-- TEST1-->
 	<script type="text/javascript">
+	 function renderQuestion(){
 	 var questionData={
 	    "question":"Ulož do správneho poradia príkazy,aby si nastavil meno routra",
 	    "answers":{
@@ -106,6 +107,7 @@
     console.log(question)
  	 };
   	$( "#sortable" )
+  	}
  	</script>
 	<!-- VYHODNOT TEST1-->
 	<script>
@@ -123,9 +125,11 @@
 	    if(vystup==dobre){
 	    	
 	    	vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
+	    	vyhodnotit.innerHTML += "<button onclick='checkAnswer()' class='button5'>Skúsiť znova</button>";
 	    	}
 	    else{
 			vyhodnotit.innerHTML = "<h2>Tvoja odpoveď je nesprávna</h2>";
+			vyhodnotit.innerHTML += "<button onclick='checkAnswer()' class='button5'>Skúsiť znova</button>";
 			}
 		document.cookie="test1=1";
 	  });
@@ -157,6 +161,7 @@
 		if(pos >= questions.length){
 			test.innerHTML = "<h2>Máš "+correct+" zo "+questions.length+" otázok správne</h2>";
 			_("test_status").innerHTML = "Test je dokončený";
+			test.innerHTML += "<button onclick='renderQuestion()' class='button5'>Skúsiť znova</button>";
 			pos = 0;
 			correct = 0;
 			return false;
@@ -202,7 +207,7 @@
 		[   "Ktoré tvrdenie je správne?", "Cez neighborhood vzťah sa prenáša smerovacia informácia ", "Je vytvorený iba ak sa obe smerovače zhodnú na povinných parametroch", "Neighborhood sa dá vytvoriť aj s viac ako jedným routerom cez jeden interface", "W" ],
 		[   "Urč správnu odpoveť?", "DR je smerovač, ktorý je centrálnym bodom pre výmenu smerovacej informácie, routre si ho určujú automaticky", "DR je smerovač, ktorý je centrálnym bodom pre výmenu smerovacej informácie, určujeme si ho mi pri konfigurácií  ", "DR je router ktorý v prípade výpadku zastúpi BDR ako hlavný router pre výmenu smerovacej informácie", "Q" ],
 		[	"Aké ma označenie packet, ktorý si priamo vyžiada kontrétnu položku topológie?", "LSA", "LSU", "LSR", "E"],
-		[	"Ktorým príkazom sa dostaneme do konfiguračného módu?", "enable", "conf t", "sh config", "W"],
+		[	"Ktorým príkazom sa dostaneme do konfiguračného módu?", "enable", "configure terminal", "show running-config", "W"],
 		[	"Ktorý zápis je správny pre sieť v ktorej má router adresu 192.168.1.2/25", "network 192.168.1.0 255.255.255.128 area 1", "192.168.1.0 0.0.0.255 area 1", "192.168.1.0 0.0.0.127 area 1", "E"],
 		[	" Urč správny zápis pre redistribúciu", "redistribute eigrp 1 subnets", "redistribute eigrp 1 metric 1000", "redistribute eigrp 1 originate", "Q"]
 		];
@@ -215,6 +220,7 @@
 		if(posi >= otazky.length){
 			testik.innerHTML = "<h2>Máš "+spravne+" zo "+otazky.length+" otázok správne</h2>";
 			_("status").innerHTML = "Test je dokončený";
+			testik.innerHTML += "<button onclick='renderQuestions()' class='button5'>Skúsiť znova</button>";
 			posi = 0;
 			spravne = 0;
 			return false;
@@ -289,28 +295,24 @@
 	function drop006(event) {
 	    var data = event.dataTransfer.getData("choice001");
 	    event.target.appendChild(document.getElementById(data));
-	score001.innerHTML = b++;
 	        place001.innerHTML = "HTTP SMTP POP3 FTP Telnet";
 	}
 
 	function drop007(event) {
 	    var data = event.dataTransfer.getData("choice002");
 	    event.target.appendChild(document.getElementById(data));
-	score001.innerHTML = b++;
 	        place002.innerHTML = "TCP UDP";
 	}
 
 	function drop008(event) {
 	    var data = event.dataTransfer.getData("choice003");
 	    event.target.appendChild(document.getElementById(data));
-	score001.innerHTML = b++;
 	        place003.innerHTML = "Ethernet Frame Relay PPP FDDI";
 	}
 
 	function drop009(event) {
 	    var data = event.dataTransfer.getData("choice004");
 	    event.target.appendChild(document.getElementById(data));
-	score001.innerHTML = b++;
 	        place004.innerHTML = "IPv4 IPv6";
 	}
 	function drop001(event) {

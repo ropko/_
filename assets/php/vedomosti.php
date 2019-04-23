@@ -24,69 +24,71 @@
 	            } );
 	</script>
 </head>
+
 <body>
 	<a href="../html/index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
 	<h1>Vyber si tému, z ktorej si chceš overiť svoje vedomosti</h1>
 	<div id="accordion">
+		<!--TEST1 -->
 		<h3>Základné nastavenie routra</h3>
 		<article>
-			<?php if(@$_COOKIE["test1"]=="1") echo "Tento test si už robil/a."; ?>
-			<p>Zoraď do správneho poradia úvodnú konfiguráciu routra</p>
+			<?php if(@$_COOKIE["test1"]=="1") echo "Tento test si už robil/a.";
+			 ?>
 			<div id="vyhodnotit">
+			<p>Zoraď do správneho poradia úvodnú konfiguráciu routra</p>
 				<ul id="sortable"></ul>
 				<button >Vyhodnotit</button>
 			</div>
 		</article>
+		<!-- TEST2 -->
 		<h3>Vedomosti o základných súčastiach siete</h3>
 			<article id="jstf">
 			<?php if(@$_COOKIE["test2"]=="1") echo "Tento test si už robil/a."; ?>
 			<h2 id="test_status"></h2>
 			<div id="test"></div>
 			</article>
+		<!-- TEST3 -->
 		<h3>Router otázočky</h3>
 		<article id="jstf">
 			<?php if(@$_COOKIE["test3"]=="1") echo "Tento test si už robil/a."; ?>
 			<h2 id="status"></h2>
 			<div id="testik"></div>	
 		</article>
+		<!-- TEST4 -->
 		<h3>ISO OSI model</h3>
 		<article class="iso">
-			<?php if(@$_COOKIE["test4"]=="1") echo "Tento test si už robil/a."; ?>
-			<div class"protokoly">
-				<div class="l1" draggable="true" > 
-					<p>HTTP SMTP POP3 FTP Telnet</p>
-	    		</div>
-	    		<div class="l2" draggable="true">
-	    			<p>TCP UDP</p>
-	    		</div>
-		    	<div class="l3" draggable="true" > 
-		    		<p>Ethernet Frame Relay PPP FDDI</p>
-		    	</div>
-		    	<div class="l4" draggable="true" > 	
-		    		<p>IPv4 IPv6</p>
-		    	</div>			  
+		<div class="protokol">
+		    <div class="box2" ondrop="drop001(event)">
+		        <text ondragstart="dragStart001(event)" draggable="true" id="target001">HTTP SMTP POP3 FTP Telnet</text>
 		    </div>
-		    <div class="vrstvy">
-			 	<div class="v1">
-			 		<p>Aplikačná vrstva</p>
-					<p>Prezentačná vrstva</p>
-					<p>Relačná vrstva</p>
-			  	</div>
 
-				<div class="v2">
-					<p>Transportná vrstva</p>
-			 	</div>
-			  
-			  	<div class="v3">
-			  		<p>Sieťová vrstva</p>
-			  	</div>	
-			  	<div class="v4">
-			  		<p>Data-linková(Spojová)</p>
-					<p>Fyzická vrstva</p>
-			  	</div>
+		    <div class="box2" ondrop="drop002(event)">
+		        <text ondragstart="dragStart002(event)" draggable="true" id="target002">TCP UDP</text>
+		    </div>
+
+		    <div class="box2" ondrop="drop003(event)">
+		        <text ondragstart="dragStart003(event)" draggable="true" id="target003">Ethernet Frame Relay PPP FDDI</text>
+		    </div>
+		    <div class="box2" ondrop="drop004(event)">
+		        <text ondragstart="dragStart004(event)" draggable="true" id="target004">IPv4 IPv6</text>
+		    </div>
+    	</div>
+   		<div class="vrstva">
+		    <div class="box1" ondrop="drop006(event)" ondragover="allowDrop001(event)" id="place001">Aplikačná vrstva
+																									Prezentačná vrstva
+																									Relačná vrstva</div>
+
+		    <div class="box1" ondrop="drop007(event)" ondragover="allowDrop002(event)" id="place002">Transportná vrstva</div>
+
+		    <div class="box1" ondrop="drop008(event)" ondragover="allowDrop003(event)" id="place003">Sieťová vrstva</div>
+
+		    <div class="box1" ondrop="drop009(event)" ondragover="allowDrop004(event)" id="place004">Data-linková(Spojová)
+																									Fyzická vrstva</div>	
+		</div>
 			</div>
 		</article>
 	</div>
+	<!-- TEST1-->
 	<script type="text/javascript">
 	 var questionData={
 	    "question":"Ulož do správneho poradia príkazy,aby si nastavil meno routra",
@@ -105,6 +107,7 @@
  	 };
   	$( "#sortable" )
  	</script>
+	<!-- VYHODNOT TEST1-->
 	<script>
 	  $( function() {
 	    $( "#sortable" ).sortable();
@@ -126,7 +129,7 @@
 			}
 		document.cookie="test1=1";
 	  });
-
+	  //RANDOM TEST1
 	  function getRndInteger(min, max) {
 	    return Math.floor(Math.random() * (max - min) ) + min;
 	}
@@ -135,7 +138,7 @@
 	  $("li:nth-of-type(3)").data("poradie",3);
 	  $("li:nth-of-type(4)").data("poradie",4);
 	</script>
-
+	<!-- TEST2 -->
 	<script>
 		var pos = 0, test, test_status, question, choices, chA, chB, chC, correct = 0;
 		var questions = [
@@ -148,6 +151,7 @@
 	function _(x) {
 			return document.getElementById(x);
 		}
+	//RENDER TEST2
 	function renderQuestion() {
 		test = _("test");
 		if(pos >= questions.length){
@@ -156,6 +160,7 @@
 			pos = 0;
 			correct = 0;
 			return false;
+		document.cookie="test2=1";
 		}
 		_("test_status").innerHTML = "Otázka "+(pos+1)+" z "+questions.length;
 		var question = questions[pos][0];
@@ -186,11 +191,9 @@
 		console.log("Correct: "+correct);
 		renderQuestion();
 	}
-
   	window.addEventListener("load", renderQuestion, false);
-    
-</script>
-
+	</script>
+	<!-- TEST3-->
 	<script>
 		var posi = 0, testik, status, otazka, moznosti, chQ, chW, chE, spravne = 0;
 		var otazky = [
@@ -206,6 +209,7 @@
 	function _(y) {
 			return document.getElementById(y);
 		}
+	//RENDER TEST3
 	function renderQuestions() {
 		testik = _("testik");
 		if(posi >= otazky.length){
@@ -245,64 +249,88 @@
 	}
 	window.addEventListener("load", renderQuestions, false);
 	</script>
+<!--TEST4 Drag&Drop-->
+<script>
+    var b = 0;
+    b++;
+	function dragStart001(event) {
+	    event.dataTransfer.setData("choice001", event.target.id);
+	}
+
+	function dragStart002(event) {
+	    event.dataTransfer.setData("choice002", event.target.id);
+	}
+
+	function dragStart003(event) {
+	    event.dataTransfer.setData("choice003", event.target.id);
+	}
+
+	function dragStart004(event) {
+	    event.dataTransfer.setData("choice004", event.target.id);
+	}
+
+	function allowDrop001(event) {
+	    event.preventDefault();
+	}
+
+	function allowDrop002(event) {
+	    event.preventDefault();
+	}
+
+	function allowDrop003(event) {
+	    event.preventDefault();
+	}
+
+	function allowDrop004(event) {
+	    event.preventDefault();
+	}
 
 
-	<script type="text/javascript">
-	const fill = document.querySelector('.protokoly');
-	const empties = document.querySelectorAll('.vrstvy');
+	function drop006(event) {
+	    var data = event.dataTransfer.getData("choice001");
+	    event.target.appendChild(document.getElementById(data));
+	score001.innerHTML = b++;
+	        place001.innerHTML = "HTTP SMTP POP3 FTP Telnet";
+	}
 
+	function drop007(event) {
+	    var data = event.dataTransfer.getData("choice002");
+	    event.target.appendChild(document.getElementById(data));
+	score001.innerHTML = b++;
+	        place002.innerHTML = "TCP UDP";
+	}
 
-  fill.addEventListener('dragstart', dragStart, false);
-  fill.addEventListener('dragend', dragEnd, true );
-// Loop through empty boxes and add listeners
-  for (const empty of empties) {
-  empty.addEventListener('dragover', dragOver);
-  empty.addEventListener('dragenter', dragEnter);
-  empty.addEventListener('dragleave', dragLeave);
-  empty.addEventListener('drop', dragDrop);
-}
+	function drop008(event) {
+	    var data = event.dataTransfer.getData("choice003");
+	    event.target.appendChild(document.getElementById(data));
+	score001.innerHTML = b++;
+	        place003.innerHTML = "Ethernet Frame Relay PPP FDDI";
+	}
 
-// Drag Functions
+	function drop009(event) {
+	    var data = event.dataTransfer.getData("choice004");
+	    event.target.appendChild(document.getElementById(data));
+	score001.innerHTML = b++;
+	        place004.innerHTML = "IPv4 IPv6";
+	}
+	function drop001(event) {
+	    event.preventDefault();
+	}
 
-function dragStart() {
-  console.log('start')
-  this.className += 'l1';
-  this.className += 'l2';
-  this.className += 'l3';
-  this.className += 'l4';
-  setTimeout(() => (this.className = 'l1'), 0);
-}
+	function drop002(event) {
+	    event.preventDefault();
+	}
 
-function dragEnd() {
-  this.className = 'l1';
-  this.className = 'l2';
-  this.className = 'l3';
-  this.className = 'l4';
-}
-function dragOver(e) {
-  e.preventDefault();
-}
+	function drop003(event) {
+	    event.preventDefault();
+	}
 
-function dragEnter(e) {
-  e.preventDefault();
-  this.className += ' hovered';
-}
-
-function dragLeave() {
-  this.className = 'v1';
-  this.className = 'v2';
-  this.className = 'v3';
-  this.className = 'v4';
-}
-
-function dragDrop() {
-  
-  this.className = 'v1';
-  this.className = 'v2';
-  this.className = 'v3';
-  this.className = 'v4';
-  this.append(fill) ; 
-}
+	function drop004(event) {
+	    event.preventDefault();
+	}
+	if (b == 4){
+	iso.innerHTML = "<h2>Tvoja odpoveď je správna</h2>";
+	}
 </script>
 </body>
 </html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Základy</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="../img/fav/favicion.png">
+	<link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Open+Sans+Condensed:300" rel="stylesheet">
+  	<link href="../style/style.css" rel="stylesheet">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script>
+    	$( function() {
+    		$("#accordion").accordion({ header:"h3", collapsible: true, active: false });
+     		$( "#accordion" ).accordion();
+            } );
+  	</script>
+</head>
+<body>
+	<a href="index1.html" class='domov'><img src="../img/fav/favicion.png" alt="Domov" height="60" width="60"></a>
+	
+	<article id="size">
+	<h1>Základy sietí</h1>
+	<div>
+	<p>Počítačová sieť je skupina vzájomne prepojených zariadení, schopných prenášať množstvo rôznych
+		typov komunikácií vrátane počítačových dát, hlasu, videa a hier, podľa určitých pravidiel.</p>
+	</div>
+	<h2>Druhy sietí</h2>
+	<div id="accordion">
+	
+		<h3>LAN</h3>
+			<article>
+				<div id="jstf">
+				<p> Local area network (LAN) je lokálna počítačová sieť ktorá spája počítače a ďalšie zariadenia, pokrývajúca menšiu geografickú oblasť, ako napríklad dom, kancelária, budova alebo skupina budov. Súčasné LAN siete bývajú založené na prepínaných eternetových sieťach. Tieto siete sú prepájané či už metalickým káblom, optickým káblom alebo bezdrôtovo (wifi, bluetooth).
+				</p>
+			</div>
+			</article>
+		
+		<h3>MAN</h3>
+			<article>
+			<div id="jstf">
+				<p>
+					Metropolitan area network (MAN) je počítačová sieť s geografickou oblasťou väčšou ako je najväčšia lokálna sieť. MAN sieť je  napríklad navzájom prepojené lokálne siete v meste do jednej väčšej siete.
+				</p>
+			</div>		
+			</article>
+		<h3>WAN</h3>
+			<article>
+			<div id="jstf">
+				<p>
+					Wide area network (WAN) je počítačová sieť ktorá sa rozkladá na najväčšej geografickej oblasti.  Podnikateľské centrá, vládne subjekty využívajú rozsiahlu sieť na prenos údajov pre zamestnancov , študentov alebo dodávateľom na celom svete. Tento typ telekomunikácie umožňuje efektívne vykonávať svoju každodennú prácu bez ohľadu na polohu firmy alebo jednotlivca. Internet je považovaný na WAN.
+
+				</p>
+			</div>
+			</article>
+	</div>
+	<h1>Sieťové komponenty a ich funkcia</h1>
+		<p>Všetky zariadenia v počítačových sieťach vieme rozdeliť do dvoch skupín</p><br>
+	<div>
+		<p><b>Koncové zariadenia:</b> priamo ich používajú užívatelia, nazývame ich  host-y alebo uzly siete. Host začína komunikáciu, alebo naopak je jej cieľom. Je adresátom, teda ten komu je daná správa doručená.<br> Príkladom koncových zariadení sú:  počítač,server, notebook, alebo IP telefón, sieťová tlačiareň…
+		</p>
+	</div>
+	<div>
+		<p><b>Prepojovacie zariadenia: </b>prepájajú rôzne časti jednej siete, alebo rôznych
+			sietí dokopy. Tieto zariadenia nezačínajú komunikáciu, iba preposielajú dátové signály, informujú
+			zariadenia o chybách...
+		</p>
+	</div>
+	<div>
+			Prepojovacie zariadenia môžeme deliť na 3 typy:<br></p>
+			<ol>
+				<li><b>Prístupové zariadenia</b> – network access devices: prepájajú koncové zariadenia do siete.
+					HUB, Switch, Wireless Access point.</li>
+				<li><b>Na prepájanie sietí</b> - prepájajú jednu sieť k inej sieti.
+				Router, Server, Modem</li>
+				<li><b>Bezpečnostné zariadenia</b> - firewall</li>
+			</ol>
+		</div>
+		<h1>Čo sa ti zíde vedieť</h1>
+		<div id="jstf">
+		<h4>IP Adresa</h4>
+			<p>IP adresa slúži ako unikátne číselné označenie každého zariadenia pripojeného k sieti pomocou internetového protokolu. IP adresa slúži na identifikáciu zariadení a správne adresovanie dát, podobne ako poštová adresa slúži na smerovanie listov a balíkov. IP Adreasa môže byť nakonfigurovaná staticky, čiže ju ručne napíšeme a určíme mi akú bude mať hodnotu alebo pomocou DHCP. DHCP umožňuje zariadeniam vyžiadať si a získať ip adresu od servera, ktorý má zoznam adries voľných na použitie.</p>
+		<h4>MAC Adresa</h4>
+			<p>Media Access Control je identifikačné číslo sieťového adaptéra(sieťová karta), ktorý slúži na jednoznačnú identifikáciu sieťového rozhrania v lokálnych počítačových sieťach typu Ethernet a v mnohých ďalších. MAC adresa je väčšinou 48-bitové číslo, ktoré sa kvôli priehľadnosti uvádza ako 12-miestne  hexadecimálne číslo (napr. 07:00:65:03:02:FA). </p>
+		<h4>HUB</h4>
+			<p>Je aktívny prvok počítačovej siete, ktorý umožňuje vetvenie komunikácie. To znamená, že všetky dáta, ktoré prichádzajú na jeden z portov HUBu skopíruje na všetky ostatné porty, bez ohľadu na to, na ktorom porte sa nachádza zariadenie, ktorému dané dáta boli poslané. To má za následok, že všetky zariadenia pripojené na HUB “vidia” všetky rámce, aj tie, ktoré im neboli adresované a zbytočne zaťažuje prevádzku týchto zariadení.  </p>
+		<h4>SWITCH</h4>
+			<p>Je zariadenie v počítačovej sieti ktoré slúži na prepájanie jednotlivých komponentov v sieti. Switch prepína na základe MAC adries koncových zariadení. Vďaka tomu switch pošle dáta priamo na koncové zariadenie a nerozposiela ich na všetky porty v sieti. Tým sa radikálne znížil tok zbytočných dát ako to bolo pri rozbočovači(HUB). Switch si v pamäti vytvorí a uchová tabuľku MAC adries všetkých zariadení k nemu pripojených pomocou jednotlivých portov. Avšak pri štarte je celá tabuľka MAC adries prázdna. Preto switch rozposiela dátové rámce všetkým zariadeniam, no prijíma ho len koncové zariadenie, pre ktoré bol rámec určený. Pri odpovedi naň sa koncové zariadenie zapíše do MAC tabuľky switchu. Keď rámec príde na port switchu, switch porovná cieľovú MAC adresu v zadanú rámci so svojou tabuľkou MAC adries. Vďaka tomu dokáže switch určiť na ktorý port má dátový rámec preposlať. </p>
+		<h1>Čo je VLSM?</h1>
+			<p>VLSM alebo inak povedané podsieťovanie je v podstate roztriedenie siete podľa požiadaviek. Povedzme že máme sieť 192.168.1.0 255.255.255.255 (iný spôsob zápisu 192.168.1.0/24). Od nášho zákazníka sme dostali požiadavku ktorá znie. "Mám 3 oddelenie a potreboval by som pre prvé oddelenie bude mať 100 PC, druhé 50 PC a tretie 28 PC.
+			</p>
+			
+				<p id="vys">Treba uvedomiť čo znamená prefix (maska) siete. Maska siete určuje počet voľných hostov ktoré máme k dispozícií. Z týchto voľných hostov budeme vytvárať následne podsiete pre určené oddelenia.<br><b>Jednotlivé masky majú rôzne počty hostov.</b></p>
+				<img src="../img/subnet_list.jpg" class="margin">
+				<ol>			
+				<li id="vys">Krokom  číslom 1 pri správnom nastavení vlsm je zoradenie hostov od najväčšieho po najmenší.<br> V našom prípade by sme si zoradili zariadenia nasledovne.</li>
+				<ul>
+					<li><b>100</b></li>
+					<li><b>50</b></li>
+					<li><b>28</b></li>
+				</ul>
+
+				<li id="vys">Ako prvé je prvé oddelenie v ktorom máme 100 PC. To znamená, že je nutné si vybrať takú masku do ktorej sa nám vojde 100 PC. Preto si vyberieme masku ktorá má veľkosť 255.255.255.128 (/25). Táto sieť nám poskytuje dostatok hostov pre naše oddelenie. Ak máme masku siete /25, znamená to, že k dispozícií <b>je 126 hostov.</b><br> <b>Prečo ale maska končí číslom 128?</b>Pri každom podsieťovaní si treba pamätať že 2 hosty máme použité na <b>adresu siete a broadcast</b>
+				<p style="margin-top: 10px; font-size: 16px"><b>Takže ako asi bude vyzerať náš zápis?</b></p>
+
+					<ul style="margin-top: 15px;">
+						<li>Adresa siete: 192.168.1.0 (adresa siete musí byť vždy párne číslo, začína sa rátať aj s 0)</li>
+						<li>Maska siete: 255.255.255.128</li>
+						<li>Prvý a posledný použiteľný host: 192.168.1.1 - 192.168.1.126 (Prvý host je nepárne číslo a posledný je vždy párne)</li>
+						<li>Broadcast: 192.168.1.127</li>
+					</ul>	
+				</li>
+				<li id="vys">Máme rozdelené ip pre prvé oddelenie a teraz k tomu priradíme ip aj pre druhé oddelenie. V 2. oddelení sa nachádza 50 PC z čoho sme si zvolili, že pre nás bude najlepšia maska /26. Táto maska poskytuje 62 voľných hostov. Treba si pamätať, že teraz priradzujeme ip nie od začiatku ako v prvom prípade (od 192.168.1.0) ale od skončenia predchádzajúcej podsiete. Naša predchádzajúca sieť mala <b>Broadcastovu adresu</b> 192.168.1.127.</li>
+				<p style="font-size: 16px"><b>Ako teda to bude vyzerať?</b></p>	
+				<ul>
+					<li>Adresa siete: 192.168.1.128</li>
+					<li>Maska siete: 255.255.255.192</li>
+					<li>Prvý a posledný host: 192.168.1.129 - 192.168.1.190</li>
+					<li>Broadcast: 192.168.1.191</li>
+				</ul>
+				<li id="vys">Ako posledné priradíme oddelenie s 28 PC. Na toto oddelenie nám stačí maska ktorá obsahuje 32 voľných hostov čiže masku /27. Opäť pokračujeme ako v predchádzajúcom prípade.</li>
+				<ul>
+					<li>Adresa siete: 192.168.1.192</li>
+					<li>Maska siete: 255.255.255.224</li>
+					<li>Prvý a posledný host: 192.168.1.193 - 192.168.1.222</li>
+					<li>Broadcast: 192.168.1.223</li>
+				</ul>
+				<p style="font-size: 16px">IP sú rozdané správne a všetko funguje ako má. Na zopakovanie si určte nejakú počiatočnú ip adresu od ktorej si budete vytvárať podsiete. Pre opätovnú kontrolu si vyhľadajte na internete VLSM calculator, kde si môžete skontrolovať svoje rozdelenie. :D</p>
+			</ol>
+		<h1>Konfigurácia Switchu</h1>
+		<button><a href="config.html">Pokračuj</a></button>
+		<h4>ROUTER</h4>
+			<p> je zariadenie v sieti, ktoré umožňuje prenos dát medzi dvomi alebo viacerými počítačovými sieťami v procese zvanom smerovanie. Smerovač prepája počítačové siete na 3 vrstve modelu OSI(sieťová vrstva).</p>
+		<h1>Konfigurácia Routra</h1>
+
+		<button><a href="config.html">Pokračuj</a></button>
+
+		</div>
+	
+		</article>
+</body>
+</html>
